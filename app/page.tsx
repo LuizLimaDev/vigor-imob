@@ -4,6 +4,7 @@ export default function Home() {
       <p className="font-archivo">Teste font 1</p>
       <p className="font-alefreya">Teste font 2</p>
       <p className="font-poppins">Teste font 2</p>
+      <p className="font-poppins">Teste git commit</p>
     </main>
   );
 }
