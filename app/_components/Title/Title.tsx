@@ -1,11 +1,16 @@
 export type TProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
-export default function Title({ children }: TProps) {
+const Title = ({ children, className }: TProps) => {
   return (
-    <h1 className="font-archivo text-base font-bold uppercase text-VIprimary-color">
+    <h1
+      className={`${className} text-center font-archivo text-base font-bold uppercase text-VIprimary-color`}
+    >
       {children}
     </h1>
   );
-}
+};
+
+export default Title;

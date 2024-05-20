@@ -3,7 +3,7 @@ export type TProps = {
   secondary?: boolean;
 };
 
-export default function Button({ children, secondary }: TProps) {
+const Button = ({ children, secondary }: TProps) => {
   return (
     <button
       className={`
@@ -18,4 +18,6 @@ export default function Button({ children, secondary }: TProps) {
       {children}
     </button>
   );
-}
+};
+
+export default Button;
