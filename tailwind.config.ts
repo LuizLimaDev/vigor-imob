@@ -22,7 +22,7 @@ const config = {
     extend: {
       fontFamily: {
         archivo: "var(--font-archivo)",
-        alefreya: "var(--font-alefreya)",
+        alegreya: "var(--font-alefreya)",
         poppins: "var(--font-poppins)",
       },
       colors: {
