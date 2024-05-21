@@ -13,7 +13,7 @@ const FeaturedVenture = () => {
 
         <div
           className="
-            flex max-w-[358px]  gap-[34px] overflow-hidden overflow-x-scroll   [&::-webkit-scrollbar]:hidden
+            flex gap-[34px] overflow-hidden overflow-x-scroll   [&::-webkit-scrollbar]:hidden
           "
         >
           <VentureCard image="/Ventures/01.png" name="Primavera" />

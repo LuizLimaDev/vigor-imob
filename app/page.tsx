@@ -7,7 +7,7 @@ import Footer from "./_components/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className="flex max-w-[390px] flex-col items-center justify-between bg-VIligth-color">
+    <main className="flex w-screen flex-col items-center justify-between bg-VIligth-color">
       <VideoPlayer />
       <MenuMobile />
 
