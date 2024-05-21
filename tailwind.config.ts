@@ -25,6 +25,10 @@ const config = {
         alegreya: "var(--font-alefreya)",
         poppins: "var(--font-poppins)",
       },
+      dropShadow: {
+        "VI-1": "2px 2px 2px rgb(0 0 0/ 0.50)",
+        "VI-2": "1.5px 1px 2px rgb(0 0 0/ 0.40)",
+      },
       colors: {
         "VIprimary-color": "hsl(var(--VIblue))",
         "VIsecondary-color": "hsl(var(--VIgreen))",
