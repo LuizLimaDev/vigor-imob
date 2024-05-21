@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Alegreya, Archivo, Poppins } from "next/font/google";
 import "./globals.css";
+import Footer from "./_components/Footer/Footer";
+import MenuMobile from "./_components/MenuMobile/MenuMobile";
 
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 const alefreya = Alegreya({ subsets: ["latin"], variable: "--font-alefreya" });
@@ -25,7 +27,9 @@ export default function RootLayout({
       <body
         className={`${archivo.variable} ${alefreya.variable} ${poppins.variable}`}
       >
+        <MenuMobile />
         {children}
+        <Footer />
       </body>
     </html>
   );
