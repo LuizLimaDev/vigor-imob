@@ -8,7 +8,9 @@ const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 const alefreya = Alegreya({ subsets: ["latin"], variable: "--font-alefreya" });
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: "100",
+  weight: ["100", "300", "500", "700"],
+  display: "swap",
+  style: "normal",
   variable: "--font-poppins",
 });
 
@@ -26,6 +28,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body
         className={`${archivo.variable} ${alefreya.variable} ${poppins.variable}`}
+        suppressHydrationWarning
       >
         <MenuMobile />
         {children}
