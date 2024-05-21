@@ -2,123 +2,97 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/app/_components/ui/sheet";
 import Image from "next/image";
+import Link from "next/link";
+import FooterItem from "./FooterItem/FooterItem";
 
 const MenuMobile = () => {
   return (
     <div className="absolute flex w-screen items-center justify-between px-4 pt-2">
-      <Image
-        src="/logo.png"
-        alt="logo imobiliária vigor"
-        width={66}
-        height={30}
-        className="drop-shadow-lg"
-      />
+      <Link href="/">
+        <Image
+          src="/logo.png"
+          alt="logo imobiliária vigor"
+          width={66}
+          height={30}
+          className="drop-shadow-VI-1"
+        />
+      </Link>
 
       <Sheet>
         <SheetTrigger>
           <Image
             src="/menu-hamburger.svg"
             alt="logo imobiliária vigor"
-            width={17}
-            height={8}
-            className="drop-shadow-lg"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="drop-shadow-VI-1 h-[.5rem] w-[1.062rem]"
           />
         </SheetTrigger>
 
         <SheetContent>
-          <SheetHeader className="w-[100.2%] -translate-x-[.3%]">
-            <SheetTitle className="flex flex-col items-center justify-center bg-VIsecondary-color py-4">
+          <div className="pt1- flex h-full w-full -translate-x-[.3%] flex-col justify-between">
+            <div className="flex h-[4.85rem] w-[100.3%] items-center justify-center bg-VIsecondary-color">
               <Image
                 src="/logo-blue.png"
                 alt="logo imobiliária vigor"
                 width={101}
                 height={46}
-                className="drop-shadow-lg"
+                className="drop-shadow-VI-2"
               />
-            </SheetTitle>
-          </SheetHeader>
+            </div>
+            <div className="ml-10 flex h-[50%] flex-col items-start justify-between font-archivo font-bold uppercase text-VIprimary-color drop-shadow-md">
+              <Link href="/">
+                <SheetClose className="uppercase">Home</SheetClose>
+              </Link>
 
-          <SheetDescription className="py-10 pl-10">
-            <ul>
-              <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                Home
-              </li>
-              <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                Sobre nós
-              </li>
-              <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                Cadastre imóveis
-              </li>
-              <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                Contato
-              </li>
-              <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                Corretores
-              </li>
-              <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                Todos imóveis
-              </li>
-              <SheetClose asChild>
-                <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
-                  Sair
-                </li>
-              </SheetClose>
-            </ul>
-          </SheetDescription>
+              <Link href="/about">
+                <SheetClose className="uppercase">Sobre nós</SheetClose>
+              </Link>
 
-          <div className="absolute -left-[0.3%] bottom-0 flex w-[100.2%] flex-col gap-4 bg-VIprimary-color py-5 pl-3 text-VIligth-color">
-            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
-              <Image
+              <Link href="#">
+                <SheetClose className="uppercase">Cadastre imóveis</SheetClose>
+              </Link>
+
+              <Link href="#">
+                <SheetClose className="uppercase">Contato</SheetClose>
+              </Link>
+
+              <Link href="#">
+                <SheetClose className="uppercase">Corretores</SheetClose>
+              </Link>
+
+              <Link href="#">
+                <SheetClose className="uppercase">Todos imóveis</SheetClose>
+              </Link>
+
+              <SheetClose className="uppercase">Sair </SheetClose>
+            </div>
+
+            <div className="flex w-[100.3%] flex-col gap-4 bg-VIprimary-color py-5 pl-10 text-VIligth-color">
+              <FooterItem
                 src="/Icons/phone.svg"
                 alt="telefone"
-                width={19.5}
-                height={19.5}
+                text="(79) 9 9910-2930"
               />
-              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
-                (79) 9 9910-2930
-              </p>
-            </div>
-
-            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
-              <Image
+              <FooterItem
                 src="/Icons/mail.svg"
-                alt="telefone"
-                width={19.5}
-                height={19.5}
+                alt="email"
+                text="vigorimob@hotmail.com"
               />
-              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
-                vigorimob@hotmail.com
-              </p>
-            </div>
-
-            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
-              <Image
+              <FooterItem
                 src="/Icons/instagram.svg"
-                alt="telefone"
-                width={19.5}
-                height={19.5}
+                alt="instagram"
+                text="@vigor_imob"
               />
-              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
-                @vigor_imob
-              </p>
-            </div>
-
-            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
-              <Image
+              <FooterItem
                 src="/Icons/id.svg"
-                alt="telefone"
-                width={19.5}
-                height={19.5}
+                alt="creci"
+                text="CRECI - PTJ: 271"
               />
-              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
-                CRECI - PTJ: 271
-              </p>
             </div>
           </div>
         </SheetContent>
