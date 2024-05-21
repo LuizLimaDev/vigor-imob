@@ -1,5 +1,6 @@
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -63,11 +64,62 @@ const MenuMobile = () => {
               <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
                 Todos imóveis
               </li>
+              <SheetClose asChild>
+                <li className="mb-[3.125rem] text-left font-archivo font-bold uppercase text-VIprimary-color drop-shadow-sm">
+                  Sair
+                </li>
+              </SheetClose>
             </ul>
           </SheetDescription>
 
-          <div className="absolute -left-[0.3%] bottom-0 w-[100.2%] bg-VIprimary-color py-5 pl-3 text-VIligth-color">
-            <p>footer</p>
+          <div className="absolute -left-[0.3%] bottom-0 flex w-[100.2%] flex-col gap-4 bg-VIprimary-color py-5 pl-3 text-VIligth-color">
+            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
+              <Image
+                src="/Icons/phone.svg"
+                alt="telefone"
+                width={19.5}
+                height={19.5}
+              />
+              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
+                (79) 9 9910-2930
+              </p>
+            </div>
+
+            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
+              <Image
+                src="/Icons/mail.svg"
+                alt="telefone"
+                width={19.5}
+                height={19.5}
+              />
+              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
+                vigorimob@hotmail.com
+              </p>
+            </div>
+
+            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
+              <Image
+                src="/Icons/instagram.svg"
+                alt="telefone"
+                width={19.5}
+                height={19.5}
+              />
+              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
+                @vigor_imob
+              </p>
+            </div>
+
+            <div className=" flex  h-[1.187rem] items-center justify-start gap-2">
+              <Image
+                src="/Icons/id.svg"
+                alt="telefone"
+                width={19.5}
+                height={19.5}
+              />
+              <p className="flex justify-center gap-2 font-archivo text-sm font-bold ">
+                CRECI - PTJ: 271
+              </p>
+            </div>
           </div>
         </SheetContent>
       </Sheet>

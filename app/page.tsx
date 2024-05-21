@@ -7,16 +7,17 @@ import Footer from "./_components/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className="flex w-screen flex-col items-center justify-between bg-VIligth-color">
-      <VideoPlayer />
-      <MenuMobile />
+    <>
+      <main className="flex w-screen flex-col items-center justify-between bg-VIligth-color">
+        <VideoPlayer />
+        <MenuMobile />
 
-      <FeaturedVenture />
+        <FeaturedVenture />
 
-      <SectionTitleBar>Novidades</SectionTitleBar>
-      <Feed />
-
+        <SectionTitleBar>Novidades</SectionTitleBar>
+        <Feed />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
