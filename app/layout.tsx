@@ -8,7 +8,7 @@ const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 const alefreya = Alegreya({ subsets: ["latin"], variable: "--font-alefreya" });
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100", "300", "500", "700"],
+  weight: ["100", "300", "500", "700", "800"],
   display: "swap",
   style: "normal",
   variable: "--font-poppins",
