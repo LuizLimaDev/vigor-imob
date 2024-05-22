@@ -1,6 +1,6 @@
 import Image from "next/image";
-import QualitiesCard from "../_components/Pages/About/QualitiesCard/QualitiesCard";
-import TestimonialCard from "../_components/Pages/About/TestimonialCard/TestimonialCard";
+import QualitiesCard from "./_components/QualitiesCard/QualitiesCard";
+import TestimonialCard from "./_components/TestimonialCard/TestimonialCard";
 
 export default function About() {
   return (

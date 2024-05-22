@@ -9,13 +9,13 @@ export type TProps = {
 
 const TestimonialCard = ({ avatar, text, name, venture }: TProps) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center rounded-[8px] px-8 py-6 shadow-md">
+    <div className="flex w-full flex-col items-center justify-center rounded-[.5rem] px-8 py-6 shadow-md">
       <Image
         src={avatar}
         alt="avatar"
         width={60}
         height={60}
-        className="drop-shadow-VI-2 mb-4"
+        className="mb-4 drop-shadow-VI-2"
       />
 
       <div className="flex w-full gap-4">

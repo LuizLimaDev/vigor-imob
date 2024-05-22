@@ -9,7 +9,7 @@ export type TProps = {
 
 const QualitiesCard = ({ src, alt, title, text }: TProps) => {
   return (
-    <div className="flex w-[252px] flex-col items-center justify-center gap-2">
+    <div className="flex w-[15.75rem] flex-col items-center justify-center gap-2">
       <Image
         src={src}
         alt={alt}
