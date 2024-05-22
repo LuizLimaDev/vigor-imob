@@ -14,12 +14,12 @@ const VentureCard = ({ image, name }: TProps) => {
         width={0}
         height={0}
         sizes="100vw"
-        className=" min-h-[118px] min-w-[211px] opacity-[70%]"
+        className=" min-h-[7.375rem] min-w-[13.187rem] opacity-[70%]"
       />
 
       <h1
         className="
-          drop-shadow-VI-1 absolute font-alegreya text-lg font-bold uppercase text-VIprimary-color
+          absolute font-alegreya text-lg font-bold uppercase text-VIprimary-color drop-shadow-VI-1
         "
       >
         {name}

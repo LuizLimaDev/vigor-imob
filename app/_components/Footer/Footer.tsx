@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       className="
-        flex w-full flex-col items-center justify-center bg-VIprimary-color px-[91px] py-[50px]
+        flex w-full flex-col items-center justify-center bg-VIprimary-color px-[5.687rem] py-[3.125rem]
       "
     >
       <Image
@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center justify-center gap-12">
         <div className="flex flex-col items-center justify-center text-VIligth-color">
-          <div className="border-red mb-5 w-[200px] border-b">
+          <div className="border-red mb-5 w-[12.5rem] border-b">
             <h5 className="text-center font-archivo text-sm uppercase">
               Institucional
             </h5>
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-VIligth-color">
-          <div className="border-red mb-5 w-[200px] border-b">
+          <div className="border-red mb-5 w-[12.5rem] border-b">
             <h5 className="text-center font-archivo text-sm uppercase">
               Imóveis
             </h5>
@@ -47,13 +47,13 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-VIligth-color">
-          <div className="border-red mb-5 w-[200px] border-b">
+          <div className="border-red mb-5 w-[12.5rem] border-b">
             <h5 className="text-center font-archivo text-sm uppercase">
               Contato
             </h5>
           </div>
 
-          <ul className="flex flex-col items-center justify-center gap-[6px] font-alegreya">
+          <ul className="flex flex-col items-center justify-center gap-[.375rem] font-alegreya">
             <li className="flex gap-2">
               <Image src="/Icons/mail.svg" alt="email" width={24} height={24} />
               vigorimob@hotmail.com

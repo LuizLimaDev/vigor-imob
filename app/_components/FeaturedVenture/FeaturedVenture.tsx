@@ -5,7 +5,7 @@ const FeaturedVenture = () => {
   return (
     <div
       className="
-        w-screen -translate-x-[.7%] -translate-y-6 rounded-tl-[40px] bg-VIligth-color pb-4 pl-9 pt-9
+        w-screen -translate-x-[.7%] -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9
       "
     >
       <div>
@@ -13,7 +13,7 @@ const FeaturedVenture = () => {
 
         <div
           className="
-            flex gap-[34px] overflow-hidden overflow-x-scroll   [&::-webkit-scrollbar]:hidden
+            flex gap-[2.125rem] overflow-hidden overflow-x-scroll   [&::-webkit-scrollbar]:hidden
           "
         >
           <VentureCard image="/Ventures/01.png" name="Primavera" />

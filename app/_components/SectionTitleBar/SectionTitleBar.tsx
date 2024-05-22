@@ -6,7 +6,7 @@ export type TProps = {
 
 const SectionTitleBar = ({ children }: TProps) => {
   return (
-    <div className="w-full rounded-bl-[40px] rounded-tr-[40px] bg-VIsecondary-color py-4">
+    <div className="w-full rounded-bl-[2.5rem] rounded-tr-[2.5rem] bg-VIsecondary-color py-4">
       <Title>{children}</Title>
     </div>
   );

@@ -7,7 +7,7 @@ const VideoPlayer = () => {
       alt="video imóvel"
       width={0}
       height={0}
-      className="h-[177px] w-screen object-cover"
+      className="h-[11.06rem] w-screen object-cover"
     />
   );
 };
