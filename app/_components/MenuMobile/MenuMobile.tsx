@@ -29,7 +29,7 @@ const MenuMobile = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="drop-shadow-VI-1 h-[.5rem] w-[1.062rem]"
+            className="h-[.5rem] w-[1.062rem] drop-shadow-VI-1"
           />
         </SheetTrigger>
 
@@ -53,15 +53,11 @@ const MenuMobile = () => {
                 <SheetClose className="uppercase">Sobre nós</SheetClose>
               </Link>
 
-              <Link href="#">
+              <Link href="/register">
                 <SheetClose className="uppercase">Cadastre imóveis</SheetClose>
               </Link>
 
-              <Link href="#">
-                <SheetClose className="uppercase">Contato</SheetClose>
-              </Link>
-
-              <Link href="#">
+              <Link href="/brokers">
                 <SheetClose className="uppercase">Corretores</SheetClose>
               </Link>
 
