@@ -7,7 +7,7 @@ export type TProps = {
 
 const VentureCard = ({ image, name }: TProps) => {
   return (
-    <div className="over relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center">
       <Image
         src={image}
         alt={name}

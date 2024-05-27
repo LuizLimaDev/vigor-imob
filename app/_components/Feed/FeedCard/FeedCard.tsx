@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../../Button/Button";
+import Button from "../../VIButton/VIButton";
 
 export type TProps = {
   src: string;
