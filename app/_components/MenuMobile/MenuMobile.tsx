@@ -61,7 +61,7 @@ const MenuMobile = () => {
                 <SheetClose className="uppercase">Corretores</SheetClose>
               </Link>
 
-              <Link href="#">
+              <Link href="/properties">
                 <SheetClose className="uppercase">Todos imóveis</SheetClose>
               </Link>
 
