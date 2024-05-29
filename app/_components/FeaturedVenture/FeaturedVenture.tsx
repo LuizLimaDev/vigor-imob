@@ -5,7 +5,7 @@ const FeaturedVenture = () => {
   return (
     <div
       className="
-        w-screen -translate-x-[.7%] -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9
+        w-screen  -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9
       "
     >
       <div>

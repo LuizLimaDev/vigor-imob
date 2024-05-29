@@ -10,7 +10,7 @@ import FooterItem from "./FooterItem/FooterItem";
 
 const MenuMobile = () => {
   return (
-    <div className="absolute flex w-screen items-center justify-between px-4 pt-2">
+    <div className="absolute z-40 flex w-screen items-center justify-between px-4 pt-2">
       <Link href="/">
         <Image
           src="/logo.png"

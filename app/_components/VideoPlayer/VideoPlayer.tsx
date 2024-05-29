@@ -1,14 +1,16 @@
-import Image from "next/image";
-
 const VideoPlayer = () => {
   return (
-    <Image
-      src="video-player.svg"
-      alt="video imóvel"
-      width={0}
-      height={0}
-      className="h-[11.06rem] w-screen object-cover"
-    />
+    <div className="h-[12.5rem] w-full">
+      <div>
+        <video
+          src="/video/intro-video.mp4"
+          autoPlay
+          loop
+          muted
+          className="h-full w-full object-cover"
+        />
+      </div>
+    </div>
   );
 };
 
