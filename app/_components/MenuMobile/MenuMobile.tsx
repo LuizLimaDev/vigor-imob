@@ -29,7 +29,7 @@ const MenuMobile = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="h-[.5rem] w-[1.062rem] drop-shadow-VI-1"
+            className="drop-shadow-VI-white mr-3 h-[.5rem] w-[1.062rem]"
           />
         </SheetTrigger>
 
