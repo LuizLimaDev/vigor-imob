@@ -53,7 +53,7 @@ const Footer = () => {
             </h5>
           </div>
 
-          <ul className="flex flex-col items-center justify-center gap-[.375rem] font-alegreya">
+          <ul className="flex flex-col items-start justify-center gap-[.375rem] font-alegreya">
             <li className="flex gap-2">
               <Image src="/Icons/mail.svg" alt="email" width={24} height={24} />
               vigorimob@hotmail.com
@@ -76,7 +76,21 @@ const Footer = () => {
               />
               @vigor_imob
             </li>
+            <li className="flex gap-2">
+              <Image
+                src="/Icons/creci.svg"
+                alt="creci"
+                width={24}
+                height={24}
+              />
+              CRECI - PTJ: 271
+            </li>
           </ul>
+        </div>
+
+        <div className="text-center text-[.625rem] text-VIligth-color">
+          <p>Copyright© - Desenvolvido por</p>
+          <p>Luiz Lima & João</p>
         </div>
       </div>
     </footer>
