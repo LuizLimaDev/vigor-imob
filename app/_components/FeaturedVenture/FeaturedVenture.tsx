@@ -1,7 +1,12 @@
 import Title from "../Title/Title";
 import VentureCard from "./VentureCard/VentureCard";
+import db from "../../../db/db.json";
 
 const FeaturedVenture = () => {
+  const FeaturedVentureDb = db.properties.filter((propertie) =>
+    propertie.src.includes("Ventures")
+  );
+
   return (
     <div
       className="
@@ -16,10 +21,14 @@ const FeaturedVenture = () => {
             flex gap-[2.125rem] overflow-hidden overflow-x-scroll   [&::-webkit-scrollbar]:hidden
           "
         >
-          <VentureCard image="/Ventures/01.png" name="Primavera" />
-          <VentureCard image="/Ventures/02.png" name="Verão" />
-          <VentureCard image="/Ventures/03.png" name="Outono" />
-          <VentureCard image="/Ventures/04.png" name="Inverno" />
+          {FeaturedVentureDb.map((venture) => (
+            <VentureCard
+              key={venture.id}
+              id={venture.id}
+              src={venture.src}
+              title={venture.title}
+            />
+          ))}
         </div>
       </div>
     </div>

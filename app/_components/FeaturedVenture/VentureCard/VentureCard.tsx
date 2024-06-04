@@ -1,16 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export type TProps = {
-  image: string;
-  name: string;
+  id: number;
+  src: string;
+  title: string;
 };
 
-const VentureCard = ({ image, name }: TProps) => {
+const VentureCard = ({ id, src, title }: TProps) => {
   return (
-    <div className="relative flex items-center justify-center">
+    <Link
+      href={`/properties/${id - 1}`}
+      className="relative flex items-center justify-center"
+    >
       <Image
-        src={image}
-        alt={name}
+        src={src}
+        alt={title}
         width={0}
         height={0}
         sizes="100vw"
@@ -22,9 +27,9 @@ const VentureCard = ({ image, name }: TProps) => {
           absolute font-alegreya text-lg font-bold uppercase text-VIprimary-color drop-shadow-VI-1
         "
       >
-        {name}
+        {title}
       </h1>
-    </div>
+    </Link>
   );
 };
 

@@ -75,6 +75,38 @@
       "title": "O loteamento dos sonhos",
       "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorum",
       "propertie": false
+    },
+    {
+      "id": 7,
+      "src": "/Ventures/01.png",
+      "alt": "Primavera",
+      "title": "Primavera",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "propertie": false
+    },
+    {
+      "id": 8,
+      "src": "/Ventures/02.png",
+      "alt": "Verão",
+      "title": "Verão",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "propertie": false
+    },
+    {
+      "id": 9,
+      "src": "/Ventures/03.png",
+      "alt": "Outono",
+      "title": "Outono",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "propertie": false
+    },
+    {
+      "id": 10,
+      "src": "/Ventures/04.png",
+      "alt": "Inverno",
+      "title": "Inverno",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "propertie": false
     }
   ]
 }

@@ -2,7 +2,6 @@ import FeedCard from "./FeedCard/FeedCard";
 import db from "../../../db/db.json";
 
 const feeds = db.properties.filter((item) => item.propertie === false);
-console.log(feeds);
 
 const Feed = () => {
   return (
