@@ -9,6 +9,7 @@ import {
 } from "@/app/_components/ui/select";
 
 const filterButtons = ["Todos", "Novos", "Usados", "Loteamento"];
+const cities = ["São Paulo", "Fortaleza", "Rio de janeiro", "Bahia", "João Pessoa"];
 
 const MenuSliderProperties = () => {
   return (
@@ -29,13 +30,13 @@ const MenuSliderProperties = () => {
         <SelectContent>
           <SelectGroup>
             <SelectLabel className="text-VIsecondary-color">
-              Cidades
+              Selecione uma cidade:
             </SelectLabel>
-            <SelectItem value="apple">São Paulo</SelectItem>
-            <SelectItem value="banana">Fortaleza</SelectItem>
-            <SelectItem value="blueberry">Rio de janeiro</SelectItem>
-            <SelectItem value="grapes">Bahia</SelectItem>
-            <SelectItem value="pineapple">João Pessoa</SelectItem>
+            {cities.map((city, index) => (
+              <SelectItem key={index} value={city}>
+                {city}
+              </SelectItem>
+            ))}
           </SelectGroup>
         </SelectContent>
       </Select>
