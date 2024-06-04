@@ -1,0 +1,80 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "src": "/Pages/properties/properties-details/01.png",
+      "alt": "foto 01",
+      "title": "Loteamento Verão",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "size": "100m²",
+      "bedroom": 1,
+      "bathroom": 1,
+      "garage": 1,
+      "street": "Rua dos Cajazeiros",
+      "number": "15-50",
+      "city": "Fortaleza",
+      "state": "CE",
+      "propertie": true
+    },
+    {
+      "id": 2,
+      "src": "/Pages/properties/properties-details/02.png",
+      "alt": "foto 02",
+      "title": "Loteamento Outono",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "size": "200m²",
+      "bedroom": 2,
+      "bathroom": 2,
+      "garage": 2,
+      "street": "Rua dos Cajazeiros",
+      "number": "15-50",
+      "city": "Fortaleza",
+      "state": "CE",
+      "propertie": true
+    },
+    {
+      "id": 3,
+      "src": "/Pages/properties/properties-details/03.png",
+      "alt": "foto 03",
+      "title": "Loteamento Inverno",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "size": "300m²",
+      "bedroom": 3,
+      "bathroom": 3,
+      "garage": 3,
+      "street": "Rua dos Cajazeiros",
+      "number": "15-50",
+      "city": "Fortaleza",
+      "state": "CE",
+      "propertie": true
+    },
+    {
+      "id": 4,
+      "src": "/Feed/feed-01.png",
+      "alt": "foto 03",
+      "title": "Loteamento dos sonhos",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "street": "Rua dos Cajazeiros",
+      "number": "15-50",
+      "city": "Fortaleza",
+      "state": "CE",
+      "propertie": false
+    },
+    {
+      "id": 5,
+      "src": "/Feed/feed-02.png",
+      "alt": "teste",
+      "title": "O loteamento dos sonhos",
+      "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorum",
+      "propertie": false
+    },
+    {
+      "id": 6,
+      "src": "/Feed/feed-03.png",
+      "alt": "teste",
+      "title": "O loteamento dos sonhos",
+      "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorumLorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolorum",
+      "propertie": false
+    }
+  ]
+}

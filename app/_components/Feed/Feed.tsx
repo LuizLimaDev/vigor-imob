@@ -1,5 +1,8 @@
 import FeedCard from "./FeedCard/FeedCard";
-import feeds from "../../_utils/feed.json";
+import db from "../../../db/db.json";
+
+const feeds = db.properties.filter((item) => item.propertie === false);
+console.log(feeds);
 
 const Feed = () => {
   return (
@@ -7,6 +10,7 @@ const Feed = () => {
       {feeds.map((feed) => (
         <div key={feed.id}>
           <FeedCard
+            id={feed.id}
             src={feed.src}
             alt={feed.alt}
             title={feed.title}
