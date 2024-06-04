@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import ContactUs from "./ContactUs/ContactUs";
 
 const Footer = () => {
   return (
@@ -24,9 +26,15 @@ const Footer = () => {
           </div>
 
           <ul className="flex flex-col items-center justify-center font-alegreya">
-            <li>Home</li>
-            <li>Sobre nós</li>
-            <li>Fale conosco</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">Sobre nós</Link>
+            </li>
+            <li>
+              <ContactUs />
+            </li>
           </ul>
         </div>
 
@@ -88,9 +96,9 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="text-center text-[.625rem] text-VIligth-color">
+        <div className="text-center text-[.55rem] text-VIligth-color">
           <p>Copyright© - Desenvolvido por</p>
-          <p>Luiz Lima & João</p>
+          <p>Luiz Lima & João Fagundes</p>
         </div>
       </div>
     </footer>
