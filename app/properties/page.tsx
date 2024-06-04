@@ -1,6 +1,11 @@
 import Hero from "../_components/Hero/Hero";
 import MenuSliderProperties from "./MenuSliderProperties/MenuSliderProperties";
 import PropertieCard from "./PropertieCard/PropertieCard";
+import db from "../../db/db.json";
+
+const properties = db.properties.filter(
+  (propertie) => propertie.propertie === true
+);
 
 const Properties = () => {
   return (
@@ -9,27 +14,17 @@ const Properties = () => {
       <MenuSliderProperties />
 
       <div className="flex flex-col items-center justify-center">
-        <PropertieCard
-          src="/Pages/properties/01.png"
-          alt="Loteamento Primavera"
-          title="Loteamento Primavera"
-          neighborhood="Vila Mariana | SP"
-          href="#"
-        />
-        <PropertieCard
-          src="/Pages/properties/02.png"
-          alt="Loteamento Primavera"
-          title="Loteamento Primavera"
-          neighborhood="Vila Mariana | SP"
-          href="#"
-        />
-        <PropertieCard
-          src="/Pages/properties/03.png"
-          alt="Loteamento Primavera"
-          title="Loteamento Primavera"
-          neighborhood="Vila Mariana | SP"
-          href="#"
-        />
+        {properties.map((propertie) => (
+          <PropertieCard
+            key={propertie.id}
+            src={propertie.src}
+            alt={propertie.title}
+            title={propertie.title}
+            city={propertie.city}
+            state={propertie.state}
+            href={String(propertie.id - 1)}
+          />
+        ))}
       </div>
     </main>
   );

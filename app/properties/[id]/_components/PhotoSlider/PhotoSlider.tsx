@@ -12,7 +12,7 @@ const PhotoSlider = ({ title, photos }: TProps) => {
         {title}
       </h1>
 
-      <div className="flex overflow-scroll [&::-webkit-scrollbar]:hidden">
+      <div className="mr-3 flex gap-3 overflow-scroll [&::-webkit-scrollbar]:hidden">
         {photos.map((item, id) => (
           <Image
             key={id}
