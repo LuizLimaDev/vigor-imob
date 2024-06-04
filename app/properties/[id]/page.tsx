@@ -4,9 +4,11 @@ import Image from "next/image";
 import propertiesDb from "../../../db/db.json";
 import ArrowBack from "@/app/_components/ArrowBack/ArrowBack";
 import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
-import { Button } from "@/app/_components/ui/button";
+import Link from "next/link";
 
 const properties = propertiesDb.properties;
+const encodeText =
+  "Olá, me interessei sobre um empreendimento e gostaria de mais informações.";
 
 const PropertiesDetail = ({ params }: { params: { id: number } }) => {
   const isPropertie = properties[params.id].propertie;
@@ -55,7 +57,12 @@ const PropertiesDetail = ({ params }: { params: { id: number } }) => {
             </p>
           </div>
         ) : (
-          <Button className="mb-12">Conversar com corretor</Button>
+          <Link
+            href={`https://wa.me//+5579999102930?text=${encodeText}`}
+            className="mb-12 inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-VIsecondary-color px-4 py-2 text-sm font-medium text-VIprimary-color ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+          >
+            Conversar com corretor
+          </Link>
         )}
 
         <ArrowBack />
