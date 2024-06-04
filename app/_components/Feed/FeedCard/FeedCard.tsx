@@ -11,7 +11,7 @@ export type TProps = {
 
 const FeedCard = ({ id, src, alt, title, text }: TProps) => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="mb-10 flex flex-col items-center justify-center">
       <Image src={src} alt={alt} width={350} height={329}></Image>
       <h3 className="mt-9 text-center font-archivo font-extrabold text-VIprimary-color">
         {title}
