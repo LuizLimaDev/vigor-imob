@@ -28,7 +28,7 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           />
           <p>
             {bedroom} quarto
-            {bedroom > 1 ? "s" : ""}
+            {bedroom! > 1 ? "s" : ""}
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           />
           <p>
             {bathroom} banheiro
-            {bathroom > 1 ? "s" : ""}
+            {bathroom! > 1 ? "s" : ""}
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           <Image src="/Icons/car.svg" alt="banheiros" width={30} height={22} />
           <p>
             {garage} carro
-            {garage > 1 ? "s" : ""}
+            {garage! > 1 ? "s" : ""}
           </p>
         </div>
       </div>
