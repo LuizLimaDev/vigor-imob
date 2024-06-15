@@ -7,7 +7,7 @@ const VideoPlayer = () => {
           autoPlay
           loop
           muted
-          className="h-full w-full object-cover"
+          className="desktop:max-h-[26.312rem] h-full w-full object-cover"
         />
       </div>
     </div>
