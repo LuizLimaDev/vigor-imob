@@ -4,7 +4,7 @@ import TestimonialCard from "./_components/TestimonialCard/TestimonialCard";
 
 export default function About() {
   return (
-    <main className="flex w-screen flex-col items-center justify-between bg-VIligth-color px-4 pt-16 desktop:justify-center desktop:px-24">
+    <main className="flex w-screen flex-col items-center justify-center bg-VIligth-color px-4 pt-16 desktop:justify-center desktop:px-24">
       <div className="flex flex-col items-center justify-center desktop:mt-16 desktop:flex-row-reverse desktop:gap-20 ">
         <Image
           src="/Pages/about/01.png"
@@ -54,18 +54,18 @@ export default function About() {
         />
       </div>
 
-      <div className="mt-8 flex w-full flex-col desktop:mt-24">
+      <div className="mt-8 flex w-[20.875rem] flex-col items-center justify-center desktop:mt-24 desktop:w-full desktop:max-w-[67.625rem]">
         <Image
           src="/Pages/about/quotes.png"
           alt="reticencias"
           width={0}
           height={0}
           sizes="100vw"
-          className="mb-2 h-[2.5rem] w-[3rem] desktop:h-[7.5rem] desktop:w-[8.937rem]"
+          className="mb-2 h-[2.5rem] w-[3rem] self-start desktop:h-[7.5rem] desktop:w-[8.937rem] desktop:self-start "
         />
 
         <div className="mb-20 flex flex-col desktop:flex-row desktop:justify-center desktop:gap-8">
-          <div>
+          <div className="mb-10">
             <div className="desktop:absolute desktop:-mt-14 desktop:ml-6">
               <h1 className="ml-2 justify-self-start font-archivo text-2xl font-extrabold capitalize">
                 Histórias reais
@@ -84,7 +84,7 @@ export default function About() {
             porttitor rhoncus dolor purus non enim praesent elem"
               name="Floyd Miles"
               venture="Residencial Verão"
-              styles="w-[21.875rem] desktop:mt-[4rem]"
+              styles="desktop:max-w-[21.875rem] desktop:mt-[4rem]"
             />
           </div>
 
@@ -94,14 +94,14 @@ export default function About() {
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
               name="Kristin Watson"
               venture="Residencial Outono"
-              styles="w-[27.812rem] h-[21,25rem]"
+              styles="desktop:max-w-[27.812rem] desktop:h-[21,25rem]"
             />
             <TestimonialCard
               avatar="/Pages/about/avatar-03.png"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
               name="Junne Taylor"
               venture="Residencial Outono"
-              styles="w-[21.875rem] h-[17.25rem]"
+              styles="desktop:max-w-[21.875rem] desktop:h-[17.25rem]"
             />
           </div>
         </div>

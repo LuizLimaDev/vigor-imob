@@ -11,7 +11,7 @@ export type TProps = {
 const TestimonialCard = ({ avatar, text, name, venture, styles }: TProps) => {
   return (
     <div
-      className={`shadow-md" drop flex w-full flex-col items-center justify-center rounded-[.5rem] px-8 py-6 shadow-md ${styles}`}
+      className={`shadow-md" drop flex w-[21.875rem] flex-col items-center justify-center rounded-[.5rem] px-8 py-6 shadow-md ${styles}`}
     >
       <Image
         src={avatar}
