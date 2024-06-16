@@ -1,5 +1,4 @@
 import Title from "../Title/Title";
-import VideoPlayerHover from "./VideoPlayerHover/VideoPlayerHover";
 
 const VideoStory = () => {
   return (
@@ -8,11 +7,6 @@ const VideoStory = () => {
         <Title className="mt-16 text-center">imóveis</Title>
         <div className="mt-8 flex gap-10">
           {/* map com componente dos videos */}
-          <VideoPlayerHover />
-          <VideoPlayerHover />
-          <VideoPlayerHover />
-          <VideoPlayerHover />
-          <VideoPlayerHover />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import FeaturedVenture from "./_components/FeaturedVenture/FeaturedVenture";
 import VideoPlayer from "./_components/VideoPlayer/VideoPlayer";
 import SectionTitleBar from "./_components/SectionTitleBar/SectionTitleBar";
 import Feed from "./_components/Feed/Feed";
-import VideoStory from "./_components/VideoStory/VideoStory";
+// import VideoStory from "./_components/VideoStory/VideoStory";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         <FeaturedVenture />
 
         {/* fazer condicional para exibir imoveis story */}
-        <VideoStory />
+        {/* <VideoStory /> */}
 
         <SectionTitleBar>Novidades</SectionTitleBar>
         <Feed />

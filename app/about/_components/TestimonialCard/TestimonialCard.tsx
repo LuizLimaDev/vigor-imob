@@ -5,11 +5,14 @@ export type TProps = {
   text: string;
   name: string;
   venture: string;
+  styles?: string;
 };
 
-const TestimonialCard = ({ avatar, text, name, venture }: TProps) => {
+const TestimonialCard = ({ avatar, text, name, venture, styles }: TProps) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center rounded-[.5rem] px-8 py-6 shadow-md">
+    <div
+      className={`shadow-md" drop flex w-full flex-col items-center justify-center rounded-[.5rem] px-8 py-6 shadow-md ${styles}`}
+    >
       <Image
         src={avatar}
         alt="avatar"
