@@ -3,8 +3,8 @@ import Hero from "../_components/Hero/Hero";
 
 const Register = () => {
   return (
-    <main className="pt-16">
-      <div className="relative">
+    <main className="flex w-screen flex-col items-center justify-center">
+      <div className="relative w-full">
         <Hero
           src="/Pages/register/hero.png"
           alt="Cadastre seu imóvel"
@@ -12,7 +12,7 @@ const Register = () => {
         />
       </div>
 
-      <div className="my-10">
+      <div className="mx-2 my-10 w-[98%] rounded-[.5rem] bg-[#F7FAFE] py-4 desktop:mx-5">
         <RegisterForm />
       </div>
     </main>

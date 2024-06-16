@@ -108,153 +108,172 @@ const RegisterForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full flex-col justify-start gap-2 px-6"
+        className="flex w-full flex-col justify-start gap-2 px-6 desktop:w-full desktop:items-center"
       >
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="font-archivo text-sm text-VIprimary-color">
-                Nome
-              </FormLabel>
-              <FormControl>
-                <Input placeholder="Nome e Sobrenome" {...field} />
-              </FormControl>
-              <FormMessage className="mt-1" />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="font-archivo text-sm text-VIprimary-color">
-                Telefone
-              </FormLabel>
-              <FormControl>
-                <Input placeholder="(xx) xxxxx - xxxx" {...field} />
-              </FormControl>
-              <FormMessage className="mt-1" />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="font-archivo text-sm text-VIprimary-color">
-                Email
-              </FormLabel>
-              <FormControl>
-                <Input placeholder="xxxx@xxx.xxx" {...field} />
-              </FormControl>
-              <FormMessage className="mt-1" />
-            </FormItem>
-          )}
-        />
+        <div className="desktop:flex desktop:flex-row desktop:gap-10">
+          <div className="desktop:flex desktop:w-[21.375rem] desktop:flex-col desktop:gap-6">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-archivo text-sm text-VIprimary-color">
+                    Nome
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="Nome e Sobrenome" {...field} />
+                  </FormControl>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-archivo text-sm text-VIprimary-color">
+                    Telefone
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="(xx) xxxxx - xxxx" {...field} />
+                  </FormControl>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-archivo text-sm text-VIprimary-color">
+                    Email
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="xxxx@xxx.xxx" {...field} />
+                  </FormControl>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
 
-        <FormField
-          control={form.control}
-          name="type"
-          render={({ field }) => (
-            <FormItem>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Tipo de imóvel" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Selecione um tipo:</SelectLabel>
-                    {propertiesType.map((type, index) => (
-                      <SelectItem key={index} value={type!}>
-                        {type}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            </FormItem>
-          )}
-        ></FormField>
+            <div className="mt-8 desktop:mt-[1.8rem]">
+              <FormField
+                control={form.control}
+                name="type"
+                render={({ field }) => (
+                  <FormItem>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder="Tipo de imóvel" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Selecione um tipo:</SelectLabel>
+                          {propertiesType.map((type, index) => (
+                            <SelectItem key={index} value={type!}>
+                              {type}
+                            </SelectItem>
+                          ))}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
 
-        <div className="mt-8 flex flex-col gap-1">
-          <p className="font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-            Localização
-          </p>
-          <FormField
-            control={form.control}
-            name="street"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Rua" {...field} />
-                </FormControl>
-                <FormMessage className="mt-1" />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="neighborhood"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Bairro" {...field} />
-                </FormControl>
-                <FormMessage className="mt-1" />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="cep"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="CEP" {...field} />
-                </FormControl>
-                <FormMessage className="mt-1" />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="city"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Cidade" {...field} />
-                </FormControl>
-                <FormMessage className="mt-1" />
-              </FormItem>
-            )}
-          />
+          <div className="mt-8 flex flex-col gap-1 desktop:mt-2 desktop:w-[21.375rem] desktop:gap-[3rem]">
+            <div>
+              <p className="font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70 desktop:mb-[.175rem]">
+                Localização
+              </p>
+              <FormField
+                control={form.control}
+                name="street"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Rua" {...field} />
+                    </FormControl>
+                    <FormMessage className="mt-1 desktop:ml-[3px]" />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <FormField
+              control={form.control}
+              name="neighborhood"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Bairro" {...field} />
+                  </FormControl>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="cep"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="CEP" {...field} />
+                  </FormControl>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+            <span className="desktop:mt-1">
+              <FormField
+                control={form.control}
+                name="city"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Cidade" {...field} />
+                    </FormControl>
+                    <FormMessage className="mt-1 desktop:ml-[3px]" />
+                  </FormItem>
+                )}
+              />
+            </span>
+          </div>
+
+          <div className="my-8 desktop:mt-2 desktop:w-[21.375rem]">
+            <p className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Mensagem
+            </p>
+            <FormField
+              control={form.control}
+              name="text"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Deixe sua mensagem aqui."
+                      {...field}
+                      className="desktop:h-[19.25rem]"
+                    />
+                  </FormControl>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
 
-        <div className="my-8">
-          <p className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-            Mensagem
-          </p>
-          <FormField
-            control={form.control}
-            name="text"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Textarea placeholder="Deixe sua mensagem aqui." {...field} />
-                </FormControl>
-                <FormMessage className="mt-1" />
-              </FormItem>
-            )}
-          />
-        </div>
-
-        <Button type="submit">Cadastrar</Button>
+        <Button type="submit" className="max-w-[6.187rem] self-center">
+          Cadastrar
+        </Button>
       </form>
     </Form>
   );

@@ -15,7 +15,7 @@ const Hero = ({ src, alt, title }: TProps) => {
         width={0}
         height={0}
         sizes="100vw"
-        className="min-h-[11.5rem] w-full"
+        className="min-h-[11.5rem] w-full desktop:h-[11.5rem] desktop:object-cover"
       />
       <h1 className="absolute left-[50%] top-[50%] w-full -translate-x-1/2 -translate-y-1/2 text-center font-archivo text-2xl font-bold uppercase text-VIprimary-color drop-shadow-VI-1">
         {title}
