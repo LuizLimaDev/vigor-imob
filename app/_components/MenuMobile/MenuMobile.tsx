@@ -10,7 +10,7 @@ import FooterItem from "./FooterItem/FooterItem";
 
 const MenuMobile = () => {
   return (
-    <div className="absolute z-40 flex w-screen items-center justify-between px-4 pt-2">
+    <nav className="absolute z-40 flex w-screen items-center justify-between px-4 pt-2 desktop:hidden">
       <Link href="/">
         <Image
           src="/logo.png"
@@ -29,7 +29,7 @@ const MenuMobile = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="drop-shadow-VI-white mr-3 h-[.5rem] w-[1.062rem]"
+            className="mr-3 h-[.5rem] w-[1.062rem] drop-shadow-VI-white"
           />
         </SheetTrigger>
 
@@ -93,7 +93,7 @@ const MenuMobile = () => {
           </div>
         </SheetContent>
       </Sheet>
-    </div>
+    </nav>
   );
 };
 

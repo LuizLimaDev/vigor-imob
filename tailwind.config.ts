@@ -29,7 +29,7 @@ const config = {
       dropShadow: {
         "VI-1": "2px 2px 2px rgb(0 0 0/ 0.50)",
         "VI-2": "1.5px 1px 2px rgb(0 0 0/ 0.40)",
-        "VI-white": "1px 1px 2px rgb(255 255 255/ 0.90)",
+        "VI-white": "1px 1px 1px rgb(255 255 255/ 0.90)",
       },
       colors: {
         "VIprimary-color": "hsl(var(--VIblue))",

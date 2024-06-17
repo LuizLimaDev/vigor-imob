@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Alegreya, Archivo, Poppins } from "next/font/google";
-import "./globals.css";
 import Footer from "./_components/Footer/Footer";
+import MenuDesktop from "./_components/MenuDesktop/MenuDesktop";
 import MenuMobile from "./_components/MenuMobile/MenuMobile";
+import "./globals.css";
 
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 const alefreya = Alegreya({ subsets: ["latin"], variable: "--font-alefreya" });
@@ -27,10 +28,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${archivo.variable} ${alefreya.variable} ${poppins.variable}`}
+        className={`${archivo.variable} ${alefreya.variable} ${poppins.variable} relative`}
         suppressHydrationWarning
       >
         <MenuMobile />
+        <MenuDesktop />
         {children}
         <Footer />
       </body>
