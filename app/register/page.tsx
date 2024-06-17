@@ -1,10 +1,10 @@
-import RegisterForm from "./_components/RegisterFrom/RegisterFrom";
 import Hero from "../_components/Hero/Hero";
+import RegisterForm from "./_components/RegisterFrom/RegisterFrom";
 
 const Register = () => {
   return (
     <main className="flex w-screen flex-col items-center justify-center desktop:pr-4">
-      <div className="relative w-full">
+      <div className="relative w-full desktop:mt-20">
         <Hero
           src="/Pages/register/hero.png"
           alt="Cadastre seu imóvel"
