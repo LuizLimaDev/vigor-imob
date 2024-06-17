@@ -56,12 +56,15 @@ const MenuDesktop = () => {
               </li>
               <li className="flex gap-2">
                 <Link
-                  href="www.instagram.com/vigor_imob"
-                  passHref
-                  legacyBehavior
+                  href="http://www.instagram.com/vigor_imob"
                   className="flex"
+                  legacyBehavior
                 >
-                  <a target="_blank" className="flex gap-2">
+                  <a
+                    className="flex gap-2 hover:cursor-pointer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src="/Icons/instagram-blue.svg"
                       alt="email"
