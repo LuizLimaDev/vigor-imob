@@ -68,7 +68,7 @@ const Footer = () => {
                 </h5>
               </div>
 
-              <ul className="flex flex-col items-center justify-center gap-[.375rem] font-alegreya">
+              <ul className="flex flex-col items-start justify-center gap-[.375rem] font-alegreya ">
                 <li className="flex gap-2">
                   <Image
                     src="/Icons/mail.svg"

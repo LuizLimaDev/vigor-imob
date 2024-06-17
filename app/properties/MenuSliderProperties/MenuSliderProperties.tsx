@@ -19,7 +19,7 @@ const cities = [
 
 const MenuSliderProperties = () => {
   return (
-    <div className="my-8 ml-5 flex gap-4 overflow-scroll desktop:my-16 desktop:items-center desktop:justify-center [&::-webkit-scrollbar]:hidden">
+    <div className="my-8 ml-5 flex gap-4 overflow-scroll desktop:z-50 desktop:my-16 desktop:items-center desktop:justify-center [&::-webkit-scrollbar]:hidden">
       {filterButtons.map((item, index) => (
         <p
           key={index}

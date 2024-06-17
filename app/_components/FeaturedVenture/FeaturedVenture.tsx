@@ -1,6 +1,6 @@
+import db from "../../../db/db.json";
 import Title from "../Title/Title";
 import VentureCard from "./VentureCard/VentureCard";
-import db from "../../../db/db.json";
 
 const FeaturedVenture = () => {
   const FeaturedVentureDb = db.properties.filter((propertie) =>
@@ -10,7 +10,7 @@ const FeaturedVenture = () => {
   return (
     <div
       className="
-        w-screen -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9 desktop:-translate-y-[1.55rem] desktop:rounded-bl-[2.5rem] desktop:pt-20 
+        w-screen -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9 desktop:z-50 desktop:-translate-y-[1.55rem] desktop:rounded-bl-[2.5rem] desktop:pt-20
       "
     >
       <div>
