@@ -1,7 +1,7 @@
+import db from "../../db/db.json";
 import Hero from "../_components/Hero/Hero";
 import MenuSliderProperties from "./MenuSliderProperties/MenuSliderProperties";
 import PropertieCard from "./PropertieCard/PropertieCard";
-import db from "../../db/db.json";
 
 const properties = db.properties.filter(
   (propertie) => propertie.propertie === true
@@ -9,7 +9,7 @@ const properties = db.properties.filter(
 
 const Properties = () => {
   return (
-    <main className="w-screen py-16">
+    <main className="w-screen py-16 desktop:pt-20">
       <Hero src="/Pages/properties/hero.png" alt="imóveis" title="Imóveis" />
       <MenuSliderProperties />
 
