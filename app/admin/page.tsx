@@ -1,7 +1,10 @@
+import Title from "../_components/Title/Title";
+
 const Admin = () => {
   return (
     <main className="flex h-screen flex-col items-center justify-center">
-      <h1>Logar administrador</h1>
+      <Title className="text-[4rem]">Bem vindo administrador!</Title>
+      <p className="mt-4">Escolha um dos menus acima para continuar!</p>
     </main>
   );
 };
