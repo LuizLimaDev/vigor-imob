@@ -1,9 +1,9 @@
-import BrokerCard from "./_components/BrokerCard/BrokerCard";
 import Hero from "../_components/Hero/Hero";
+import BrokerCard from "./_components/BrokerCard/BrokerCard";
 
 const Brokers = () => {
   return (
-    <main className="desktop: w-screen items-center pt-16 desktop:flex desktop:flex-col desktop:justify-center">
+    <main className="desktop: w-screen items-center pt-16 desktop:flex desktop:flex-col desktop:justify-center desktop:pt-20">
       <div className="relative w-full">
         <Hero
           src="/Pages/brokers/hero.png"
