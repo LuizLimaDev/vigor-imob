@@ -10,7 +10,7 @@ const FeaturedVenture = () => {
   return (
     <div
       className="
-        desktop:translate-y-[7rem] w-screen -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9
+        w-screen -translate-y-6 rounded-tl-[2.5rem] bg-VIligth-color pb-4 pl-9 pt-9 desktop:-translate-y-[1.55rem] desktop:rounded-bl-[2.5rem] desktop:pt-20 
       "
     >
       <div>
@@ -18,7 +18,7 @@ const FeaturedVenture = () => {
 
         <div
           className="
-            desktop:justify-center flex gap-[2.125rem] overflow-hidden overflow-x-scroll   [&::-webkit-scrollbar]:hidden
+            flex gap-[2.125rem] overflow-hidden overflow-x-scroll desktop:justify-center   [&::-webkit-scrollbar]:hidden
           "
         >
           {FeaturedVentureDb.map((venture) => (

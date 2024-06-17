@@ -1,13 +1,13 @@
 const VideoPlayer = () => {
   return (
-    <div className="h-[12.5rem] w-full">
+    <div className="h-[12.5rem] w-full desktop:h-[23.312rem]">
       <div>
         <video
           src="/video/intro-video.mp4"
           autoPlay
           loop
           muted
-          className="desktop:max-h-[26.312rem] h-full w-full object-cover"
+          className="h-full w-full object-cover desktop:h-[23.312rem]"
         />
       </div>
     </div>
