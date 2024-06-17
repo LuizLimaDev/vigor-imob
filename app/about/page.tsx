@@ -13,10 +13,10 @@ export default function About() {
           height={263}
         />
         <div className="desktop:w-[38rem] desktop:items-start desktop:justify-start">
-          <h1 className="mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
+          <h1 className="mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:h-[14.56rem] desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
             A imobiliária mais conceituada da região
           </h1>
-          <p className="mb-6 mt-3 text-center font-poppins text-xs font-light desktop:mt-6 desktop:text-left">
+          <p className="mb-6 mt-3 text-center font-poppins text-xs font-light desktop:mt-0 desktop:text-left">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
             distinctio. Labore excepturi perspiciatis nesciunt veniam rerum
             magni incidunt molestias culpa nulla.
