@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="desktop:flex desktop:gap-24">
           <div>
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="logo imobiliaria vigor"
               width={177}
               height={80}
