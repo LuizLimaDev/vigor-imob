@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export type TProps = {
+  id: string;
   src: string;
   alt: string;
   title: string;
   city: string | undefined;
   state: string | undefined;
-  href: string;
 };
 
-const PropertieCard = ({ src, alt, title, city, state, href }: TProps) => {
+const PropertieCard = ({ id, src, alt, title, city, state }: TProps) => {
   return (
     <div className="mb-10 flex flex-col items-center justify-center desktop:w-[36.06rem]">
       <Image
@@ -23,7 +23,7 @@ const PropertieCard = ({ src, alt, title, city, state, href }: TProps) => {
       />
 
       <div className="mb-10 flex flex-col items-center justify-center desktop:w-[36.0625rem] desktop:flex-row desktop:justify-between">
-        <div className="flex flex-col items-center justify-center desktop:gap-2">
+        <div className="flex flex-col items-center justify-center desktop:gap-1">
           <h3 className="mt-6 font-poppins text-2xl font-bold text-VIprimary-color desktop:self-start">
             {title}
           </h3>
@@ -43,8 +43,8 @@ const PropertieCard = ({ src, alt, title, city, state, href }: TProps) => {
         </div>
 
         <Link
-          href={`/properties/${href}`}
-          className="mt-10 rounded-lg border border-VIprimary-color px-6 py-3 font-poppins text-sm text-VIprimary-color"
+          href={`/properties/${id}`}
+          className="mt-10 rounded-lg border border-VIprimary-color px-6 py-3 font-poppins text-sm text-VIprimary-color desktop:z-50"
         >
           Ver Detalhes
         </Link>

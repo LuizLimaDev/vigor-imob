@@ -7,12 +7,12 @@ export type TProps = {
 
 const PhotoSlider = ({ title, photos }: TProps) => {
   return (
-    <div className="mt-10 flex flex-col">
+    <div className="mt-10 flex flex-col desktop:w-screen">
       <h1 className="mb-3 font-poppins font-bold capitalize text-VIprimary-color">
         {title}
       </h1>
 
-      <div className="mr-3 flex gap-3 overflow-scroll [&::-webkit-scrollbar]:hidden">
+      <div className="mr-3 flex gap-3 overflow-scroll desktop:gap-6 [&::-webkit-scrollbar]:hidden">
         {photos.map((item, id) => (
           <Image
             key={id}

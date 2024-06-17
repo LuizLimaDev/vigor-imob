@@ -17,12 +17,12 @@ const Properties = () => {
         {properties.map((propertie) => (
           <PropertieCard
             key={propertie.id}
+            id={String(propertie.id)}
             src={propertie.src}
             alt={propertie.title}
             title={propertie.title}
             city={propertie.city}
             state={propertie.state}
-            href={String(propertie.id - 1)}
           />
         ))}
       </div>

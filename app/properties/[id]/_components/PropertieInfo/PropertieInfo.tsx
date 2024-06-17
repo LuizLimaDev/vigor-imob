@@ -55,6 +55,20 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           </p>
         </div>
       </div>
+
+      <div className="mb-6 zero:hidden desktop:flex desktop:w-[32.0625rem] desktop:justify-between">
+        <p className="font-archivo text-sm font-bold text-VIprimary-color">
+          Compra: <span className="text-VIsecondary-color">$400.000</span>
+        </p>
+        <p className="font-archivo text-sm font-bold text-VIprimary-color">
+          Aluguel: <span className="text-VIsecondary-color">$1.500</span>
+        </p>
+
+        {/* TODO - condicional se houver condominio p aparecer */}
+        <p className="font-archivo text-sm font-bold text-VIprimary-color">
+          Condomínio: <span className="text-VIsecondary-color">$1.500</span>
+        </p>
+      </div>
     </>
   );
 };
