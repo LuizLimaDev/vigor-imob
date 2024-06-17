@@ -107,6 +107,22 @@
       "title": "Inverno",
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
       "propertie": false
+    },
+    {
+      "id": 11,
+      "src": "/Pages/properties/properties-details/04.png",
+      "alt": "foto 01",
+      "title": "Loteamento Verão",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum necessitatibus provident amet accusantium aliquid labore nobis vitae. Earum amet labore tenetur porro placeat obcaecati accusamus enim eveniet maiores quasi! Corrupti vel officia dicta dolorem nostrum ut aperiam nobis ab quisquam iure cumque nam quos facilis quasi ipsa nemo soluta officiis, praesentium ullam consequatur aspernatur incidunt in inventore. Quam, aperiam doloribus. Nisi quam dolorem omnis praesentium est natus? Quaerat ratione ipsam inventore, necessitatibus eaque repellat voluptatum nemo totam voluptatibus obcaecati, nesciunt iure dolorum? Laborum molestias aliquid minus nobis voluptas dicta vero, repudiandae possimus reprehenderit ullam incidunt adipisci consequatur, quod saepe.",
+      "size": "100m²",
+      "bedroom": 1,
+      "bathroom": 1,
+      "garage": 1,
+      "street": "Rua dos Cajazeiros",
+      "number": "15-50",
+      "city": "Fortaleza",
+      "state": "CE",
+      "propertie": true
     }
   ]
 }

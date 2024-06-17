@@ -13,7 +13,7 @@ const Properties = () => {
       <Hero src="/Pages/properties/hero.png" alt="imóveis" title="Imóveis" />
       <MenuSliderProperties />
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center desktop:w-screen desktop:flex-row desktop:flex-wrap desktop:gap-x-10 desktop:gap-y-12">
         {properties.map((propertie) => (
           <PropertieCard
             key={propertie.id}
