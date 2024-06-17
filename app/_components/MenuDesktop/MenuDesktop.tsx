@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const MenuDesktop = () => {
   return (
-    <nav className="absolute z-50 mt-7 flex h-[50%]  w-screen items-start justify-between px-32 font-archivo font-bold uppercase text-VIprimary-color drop-shadow-VI-white zero:hidden desktop:flex">
+    <nav className="absolute z-50 mt-7 flex h-[50%]  w-screen items-start justify-between px-32 font-archivo font-bold uppercase text-VIprimary-color drop-shadow-VI-white zero:hidden desktop:flex desktop:align-middle">
       <Link href="/">
         <Image
-          src="/logo.png"
+          src="/logo.svg"
           alt="logo imobiliária vigor"
           width={66}
           height={30}

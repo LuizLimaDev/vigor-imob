@@ -13,7 +13,7 @@ const MenuMobile = () => {
     <nav className="absolute z-40 flex w-screen items-center justify-between px-4 pt-2 desktop:hidden">
       <Link href="/">
         <Image
-          src="/logo.png"
+          src="/logo.svg"
           alt="logo imobiliária vigor"
           width={66}
           height={30}
