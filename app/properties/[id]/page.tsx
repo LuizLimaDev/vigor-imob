@@ -1,6 +1,5 @@
 import ArrowBack from "@/app/_components/ArrowBack/ArrowBack";
 import Hero from "@/app/_components/Hero/Hero";
-import Title from "@/app/_components/Title/Title";
 import Image from "next/image";
 import Link from "next/link";
 import propertiesDb from "../../../db/db.json";
@@ -19,24 +18,9 @@ const PropertiesDetail = ({ params }: { params: { id: number } }) => {
       <Hero
         src="/Pages/properties/hero.png"
         alt="imóveis"
-        title="Imóveis"
-        styles="desktop:h-[25rem] zero:hidden desktop:flex"
+        title="Vídeo"
+        styles="desktop:h-[30rem] zero:hidden desktop:flex"
       />
-
-      <div className="mb-10 flex flex-col items-center desktop:my-20 desktop:flex desktop:flex-col desktop:items-center">
-        <Title className="zero:hidden desktop:mb-4 desktop:block">
-          Conheça o imóvel
-        </Title>
-        {/* TODO - por video yt no lugar da imagem */}
-        <Image
-          src="/video-properties-details.png"
-          alt="imagem do imóvel"
-          width={0}
-          height={400}
-          sizes="100vw"
-          className="w-screen desktop:w-[577px]"
-        />
-      </div>
 
       <div className="pl-4 desktop:pl-20">
         {/* TODO - mudar o properties para a propriedade fotos de cada propriedade do json */}
