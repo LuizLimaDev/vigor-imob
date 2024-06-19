@@ -59,14 +59,14 @@ const PropertiesDetail = ({ params }: { params: { id: number } }) => {
                 />
 
                 <p>
-                  {properties[params.id].street}, {properties[params.id].number}{" "}
-                  -{properties[params.id].city} | {properties[params.id].state}
+                  {properties[params.id].city} | {properties[params.id].state}
                 </p>
               </div>
             ) : (
               <Link
                 href={`https://wa.me//+5579999102930?text=${encodeText}`}
                 className="mb-12 inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-VIsecondary-color px-4 py-2 text-sm font-medium text-VIprimary-color ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                target="_blank"
               >
                 Conversar com corretor
               </Link>
