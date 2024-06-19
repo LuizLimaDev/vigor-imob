@@ -9,8 +9,13 @@ const properties = db.properties.filter(
 
 const Properties = () => {
   return (
-    <main className="w-screen py-16 desktop:flex desktop:flex-col desktop:pt-20">
-      <Hero src="/Pages/properties/hero.png" alt="imóveis" title="Imóveis" />
+    <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:pt-0">
+      <Hero
+        src="/Pages/properties/hero.png"
+        alt="imóveis"
+        title="Escolha seu imóvel"
+        styles="desktop:h-[30rem] zero:hidden desktop:flex"
+      />
       <MenuSliderProperties />
 
       <div className="flex flex-col items-center justify-center desktop:w-screen desktop:flex-row desktop:flex-wrap desktop:gap-x-10 desktop:gap-y-12">
