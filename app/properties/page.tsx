@@ -14,7 +14,7 @@ const Properties = () => {
         src="/Pages/properties/hero.png"
         alt="imóveis"
         title="Escolha seu imóvel"
-        styles="desktop:h-[30rem] zero:hidden desktop:flex"
+        styles="desktop:h-[30rem] desktop:flex"
       />
       <MenuSliderProperties />
 
