@@ -1,7 +1,7 @@
 import Title from "../../_components/Title/Title";
-import RegisterPropertie from "./RegisterPropertie/RegisterPropertie";
+import RegisterPropertieForm from "./RegisterPropertieForm/RegisterPropertieForm";
 
-const Admin = () => {
+const Propriedade = () => {
   return (
     <main className="flex w-screen flex-col items-center justify-center desktop:pr-4">
       <div className="relative w-full desktop:mt-20">
@@ -9,10 +9,10 @@ const Admin = () => {
       </div>
 
       <div className="mx-2 my-10 w-[98%] rounded-[.5rem] bg-[#F7FAFE] py-4">
-        <RegisterPropertie />
+        <RegisterPropertieForm />
       </div>
     </main>
   );
 };
 
-export default Admin;
+export default Propriedade;
