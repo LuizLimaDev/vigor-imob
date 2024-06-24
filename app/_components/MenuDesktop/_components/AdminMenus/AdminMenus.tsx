@@ -9,15 +9,16 @@ const AdminMenus = () => {
     <div
       className={`${isAdmin === true ? "flex" : "hidden"} flex w-full justify-between`}
     >
-      <div className="flex w-[30%] justify-between">
-        <Link href="/admin/imovel">Imóvel</Link>
-
+      <div className="flex w-[80%] justify-between">
+        <Link href="/admin/cadastrarimovel">Cadastrar imóvel</Link>
         <Link href="/admin/feed">Feed</Link>
-
         <Link href="/admin/corretores">Corretor</Link>
+        <Link href="/admin/imoveiscadastrados">Imóveis cadastrados</Link>
       </div>
 
-      <Link href="/">Sair</Link>
+      <Link href="/" className="text-red-600">
+        Sair
+      </Link>
     </div>
   );
 };
