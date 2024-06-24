@@ -42,9 +42,9 @@ const formSchema = z.object({
   }),
 
   photos: z
-    .instanceof(FileList)
-    .refine((file) => file?.length == 1, "Insira ao menos uma foto."),
-  video: z.instanceof(FileList).optional(),
+    .any()
+    .refine((files) => files?.length == 1, "Insira ao menos uma foto."),
+  video: z.instanceof(File).optional(),
   area: z
     .string({
       required_error: "Digite ao menos um número para a área.",

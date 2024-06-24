@@ -22,8 +22,8 @@ const formSchema = z.object({
     message: "O título deve conter no mínimo 3 caracteres.",
   }),
   video: z
-    .instanceof(FileList)
-    .refine((file) => file?.length == 1, "Insira ao menos um vídeo."),
+    .any()
+    .refine((files) => files?.length == 1, "Insira ao menos um vídeo."),
 
   text: z
     .string()
