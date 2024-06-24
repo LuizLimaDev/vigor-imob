@@ -24,6 +24,7 @@ import {
 import { Textarea } from "@/app/_components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import * as z from "zod";
 
 const propertiesType = ["Casa", "Apartamento", "Comercial", "Rural", "Praia"];
@@ -101,6 +102,7 @@ const formSchema = z.object({
 });
 
 const RegisterPropertieForm = () => {
+  const [selectedOption, setSelectedOption] = useState("");
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -123,8 +125,13 @@ const RegisterPropertieForm = () => {
   const videoRef = form.register("video");
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (values.type === "") {
+      setSelectedOption("Escolha uma opção.");
+      return;
+    }
     console.log(values);
-    router.back();
+
+    router.push("/admin");
   }
 
   return (
@@ -177,6 +184,9 @@ const RegisterPropertieForm = () => {
                         </SelectGroup>
                       </SelectContent>
                     </Select>
+                    {selectedOption && (
+                      <p className="pt-1 text-red-600">{selectedOption}</p>
+                    )}
                   </FormItem>
                 )}
               />
