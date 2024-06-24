@@ -11,7 +11,7 @@ import FooterItem from "./FooterItem/FooterItem";
 const MenuMobile = () => {
   return (
     <nav className="absolute z-40 flex w-screen items-center justify-between px-4 pt-2 desktop:hidden">
-      <Link href="/">
+      <Link href="/home">
         <Image
           src="/logo.svg"
           alt="logo imobiliária vigor"
@@ -45,7 +45,7 @@ const MenuMobile = () => {
               />
             </div>
             <div className="ml-10 flex h-[50%] flex-col items-start justify-between font-archivo font-bold uppercase text-VIprimary-color drop-shadow-md">
-              <Link href="/">
+              <Link href="/home">
                 <SheetClose className="uppercase">Home</SheetClose>
               </Link>
 

@@ -34,7 +34,7 @@ const Footer = () => {
 
               <ul className="flex flex-col items-center justify-center font-alegreya desktop:items-start desktop:justify-start">
                 <li>
-                  <Link href="/">Home</Link>
+                  <Link href="/home">Home</Link>
                 </li>
                 <li>
                   <Link href="/about">Sobre nós</Link>
