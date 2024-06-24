@@ -6,7 +6,7 @@ export type TProps = {
 const Title = ({ children, className }: TProps) => {
   return (
     <h1
-      className={`${className} text-center font-archivo text-base font-bold uppercase text-VIprimary-color`}
+      className={`text-center font-archivo font-bold uppercase text-VIprimary-color ${className}`}
     >
       {children}
     </h1>
