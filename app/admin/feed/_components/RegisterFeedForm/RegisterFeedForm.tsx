@@ -96,7 +96,7 @@ const RegisterFeedForm = () => {
           <div className="flex h-auto w-[21.375rem] flex-col gap-4">
             <div>
               <FormLabel className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                Mensagem
+                Texto
               </FormLabel>
               <FormField
                 control={form.control}

@@ -74,7 +74,7 @@ const formSchema = z.object({
       message: "A garagem deve conter no mínimo 1 número.",
     }),
 
-  text: z
+  description: z
     .string()
     .min(10, { message: "Escreva pelo menos 10 caracteres." })
     .max(200, { message: "O texto não pode ter mais de 200 caracteres" }),
@@ -115,7 +115,7 @@ const RegisterPropertieForm = () => {
       bathroom: "",
       garage: "",
       type: "",
-      text: "",
+      description: "",
       price: "",
       rent: "",
       tax: "",
@@ -334,11 +334,11 @@ const RegisterPropertieForm = () => {
           <div className="flex h-auto w-[21.375rem] flex-col gap-4">
             <div>
               <FormLabel className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                Mensagem
+                Descrição
               </FormLabel>
               <FormField
                 control={form.control}
-                name="text"
+                name="description"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
