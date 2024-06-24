@@ -1,5 +1,5 @@
 import Title from "../../_components/Title/Title";
-import RegisterPropertieForm from "./RegisterPropertieForm/RegisterPropertieForm";
+import RegisterPropertieForm from "./_components/RegisterPropertieForm/RegisterPropertieForm";
 
 const Imovel = () => {
   return (

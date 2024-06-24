@@ -1,5 +1,5 @@
 import Title from "../../_components/Title/Title";
-import RegisterFeedForm from "./RegisterFeedForm/RegisterFeedForm";
+import RegisterFeedForm from "./_components/RegisterFeedForm/RegisterFeedForm";
 
 const AdminFeed = () => {
   return (

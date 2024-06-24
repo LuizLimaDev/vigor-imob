@@ -1,5 +1,5 @@
 import Title from "../../_components/Title/Title";
-import RegisterBrokerForm from "./RegisterBrokerForm.RegisterBrokerForm";
+import RegisterBrokerForm from "./_components/RegisterBrokerForm/RegisterBrokerForm";
 
 const Corretores = () => {
   return (
