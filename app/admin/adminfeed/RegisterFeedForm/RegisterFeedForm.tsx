@@ -44,7 +44,7 @@ const RegisterFeedForm = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    router.back();
+    router.push("/admin");
   }
 
   return (
