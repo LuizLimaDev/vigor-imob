@@ -12,7 +12,7 @@ const MenuDesktop = () => {
 
   return (
     <nav className="absolute z-40 mt-7 flex h-[50%]  w-screen items-start justify-between px-32 font-archivo font-bold uppercase text-VIprimary-color zero:hidden desktop:flex desktop:gap-10 desktop:align-middle">
-      <Link href={isAdmin ? "/admin" : "/home"}>
+      <Link href={isAdmin ? "/admin" : "/"}>
         <Image
           src="/logo.svg"
           alt="logo imobiliária vigor"

@@ -15,7 +15,7 @@ const UserMenus = () => {
     <div
       className={`${isAdmin === true ? "hidden" : "flex"} flex w-full justify-between`}
     >
-      <Link href="/home">Home</Link>
+      <Link href="/">Home</Link>
 
       <Link href="/about">Sobre nós</Link>
 

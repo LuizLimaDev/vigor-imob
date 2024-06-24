@@ -17,7 +17,7 @@ const AdminMenus = () => {
         <Link href="/admin/corretores">Corretor</Link>
       </div>
 
-      <Link href="/home">Sair</Link>
+      <Link href="/">Sair</Link>
     </div>
   );
 };
