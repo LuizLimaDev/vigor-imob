@@ -4,6 +4,7 @@ import Footer from "./_components/Footer/Footer";
 import MenuDesktop from "./_components/MenuDesktop/MenuDesktop";
 import MenuMobile from "./_components/MenuMobile/MenuMobile";
 import "./globals.css";
+import NextAtuhSessionProvider from "./providers/sessionProvider";
 
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 const alefreya = Alegreya({ subsets: ["latin"], variable: "--font-alefreya" });
@@ -31,10 +32,12 @@ export default function RootLayout({
         className={`${archivo.variable} ${alefreya.variable} ${poppins.variable} relative`}
         suppressHydrationWarning
       >
-        <MenuMobile />
-        <MenuDesktop />
-        {children}
-        <Footer />
+        <NextAtuhSessionProvider>
+          <MenuMobile />
+          <MenuDesktop />
+          {children}
+          <Footer />
+        </NextAtuhSessionProvider>
       </body>
     </html>
   );
