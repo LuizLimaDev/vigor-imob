@@ -1,19 +1,31 @@
 import FeedCard from "./FeedCard/FeedCard";
-import db from "../../../db/db.json";
 
-const feeds = db.properties.filter((item) => item.src.includes("Feed"));
+export type TProps = {
+  feed: [
+    {
+      _id: string;
+      title: string;
+      video: string;
+      description: string;
+      __v: number;
+    },
+  ];
+};
 
-const Feed = () => {
+const Feed = ({ feed }: TProps) => {
+  const feeds = feed.map((item, index) => {
+    return { ...item, index };
+  });
+
   return (
     <div className="mb-9 mt-8 flex flex-col justify-center gap-9 px-3 text-center">
       {feeds.map((feed) => (
-        <div key={feed.id}>
+        <div key={feed._id}>
           <FeedCard
-            id={feed.id}
-            src={feed.src}
-            alt={feed.alt}
+            index={feed.index}
+            src={feed.video}
             title={feed.title}
-            text={feed.text}
+            text={feed.description}
           />
         </div>
       ))}
