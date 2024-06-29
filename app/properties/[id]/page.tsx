@@ -2,16 +2,32 @@ import ArrowBack from "@/app/_components/ArrowBack/ArrowBack";
 import Hero from "@/app/_components/Hero/Hero";
 import Image from "next/image";
 import Link from "next/link";
-import propertiesDb from "../../../db/db.json";
+import { Tproperties } from "../page";
 import PhotoSlider from "./_components/PhotoSlider/PhotoSlider";
 import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
 
-const properties = propertiesDb.properties;
 const encodeText =
   "Olá, me interessei sobre um empreendimento e gostaria de mais informações.";
 
-const PropertiesDetail = ({ params }: { params: { id: number } }) => {
-  const isPropertie = properties[params.id].propertie;
+const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
+  async function getProperties() {
+    const res = await fetch(
+      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/${params.id}`
+    );
+
+    if (!res.ok) {
+      throw new Error("Falha ao consultar o Banco de dados!");
+    }
+
+    return res.json();
+  }
+  const properties: Tproperties = await getProperties();
+  console.log(properties);
+
+  // TODO - liberar esta const quando for arrumado o array de string de categoria
+  // const isPropertie = properties.category.includes("rent");
+  // console.log("category: ", properties.category, isPropertie);
+  const isPropertie = true;
 
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center desktop:justify-center  desktop:pt-0">
@@ -23,29 +39,27 @@ const PropertiesDetail = ({ params }: { params: { id: number } }) => {
       />
 
       <div className="pl-4 desktop:pl-20">
-        {/* TODO - mudar o properties para a propriedade fotos de cada propriedade do json */}
-        {/* TODO - adicionar no json uma propriedade[] com o src de todas as fotos da propriedade */}
-        <PhotoSlider title={properties[params.id].title} photos={properties} />
+        <PhotoSlider title={properties.name} photos={properties.image} />
 
         <div className="gap-14 desktop:mt-28 desktop:flex desktop:px-20">
-          <div>
+          <div className="desktop:min-w-[32.0625rem]">
             <h1 className="mb-2 font-poppins text-2xl font-bold text-VIprimary-color">
               Paz e Tranquilidade
             </h1>
 
             <p className=" mb-9 pr-4 text-justify font-poppins text-xs font-light text-VIprimary-color">
               <span className="font-archivo text-2xl ">
-                {properties[params.id].text.slice(0, 1)}
+                {properties.description.slice(0, 1)}
               </span>
-              {properties[params.id].text.slice(1)}
+              {properties.description.slice(1)}
             </p>
 
             {isPropertie && (
               <PropertieInfo
-                size={properties[params.id].size}
-                bedroom={properties[params.id].bedroom}
-                bathroom={properties[params.id].bathroom}
-                garage={properties[params.id].garage}
+                size={properties.area}
+                bedroom={properties.rooms}
+                bathroom={properties.bathrooms}
+                garage={properties.garage}
               />
             )}
 
@@ -59,7 +73,7 @@ const PropertiesDetail = ({ params }: { params: { id: number } }) => {
                 />
 
                 <p>
-                  {properties[params.id].city} | {properties[params.id].state}
+                  {properties.city} | {properties.state}
                 </p>
               </div>
             ) : (

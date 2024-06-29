@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export type TProps = {
   title: string;
-  photos: { id: number; src: string; alt: string }[];
+  photos: string[];
 };
 
 const PhotoSlider = ({ title, photos }: TProps) => {
@@ -16,12 +16,12 @@ const PhotoSlider = ({ title, photos }: TProps) => {
         {photos.map((item, id) => (
           <Image
             key={id}
-            src={item.src}
-            alt={item.alt}
+            src={item}
+            alt={title}
             width={0}
             height={0}
             sizes="100vw"
-            className="rouded-[.5rem] mb-10 h-[10.312rem] min-w-[12.687rem] gap-3"
+            className="rouded-[.5rem] mb-10 h-[10.312rem] min-w-[12.687rem] gap-3 rounded-md"
           />
         ))}
       </div>

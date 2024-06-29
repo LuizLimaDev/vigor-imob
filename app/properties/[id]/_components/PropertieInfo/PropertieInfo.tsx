@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export type TProps = {
-  size: string | undefined;
+  size: number | undefined;
   bedroom: number | undefined;
   bathroom: number | undefined;
   garage: number | undefined;
