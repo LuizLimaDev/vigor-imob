@@ -19,7 +19,7 @@ const PropertieCard = ({ id, src, alt, title, city, state }: TProps) => {
         width={0}
         height={0}
         sizes="100vw"
-        className="h-[17.0625rem] w-[21.875rem] desktop:h-[28.125rem] desktop:w-[36.0625rem]"
+        className="h-[17.0625rem] w-[21.875rem] rounded-md desktop:h-[28.125rem] desktop:w-[36.0625rem]"
       />
 
       <div className="mb-10 flex flex-col items-center justify-center desktop:w-[36.0625rem] desktop:flex-row desktop:justify-between">
