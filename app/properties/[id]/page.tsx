@@ -1,13 +1,9 @@
 import ArrowBack from "@/app/_components/ArrowBack/ArrowBack";
 import Hero from "@/app/_components/Hero/Hero";
 import Image from "next/image";
-import Link from "next/link";
 import { Tproperties } from "../page";
 import PhotoSlider from "./_components/PhotoSlider/PhotoSlider";
 import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
-
-const encodeText =
-  "Olá, me interessei sobre um empreendimento e gostaria de mais informações.";
 
 const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
   async function getProperties() {
@@ -24,11 +20,6 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
   const properties: Tproperties = await getProperties();
   console.log(properties);
 
-  // TODO - liberar esta const quando for arrumado o array de string de categoria
-  // const isPropertie = properties.category.includes("rent");
-  // console.log("category: ", properties.category, isPropertie);
-  const isPropertie = true;
-
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center desktop:justify-center  desktop:pt-0">
       <Hero
@@ -42,7 +33,7 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
         <PhotoSlider title={properties.name} photos={properties.image} />
 
         <div className="gap-14 desktop:mt-28 desktop:flex desktop:px-20">
-          <div className="desktop:min-w-[32.0625rem]">
+          <div className="desktop:min-w-[50%]">
             <h1 className="mb-2 font-poppins text-2xl font-bold text-VIprimary-color">
               Paz e Tranquilidade
             </h1>
@@ -54,37 +45,25 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
               {properties.description.slice(1)}
             </p>
 
-            {isPropertie && (
-              <PropertieInfo
-                size={properties.area}
-                bedroom={properties.rooms}
-                bathroom={properties.bathrooms}
-                garage={properties.garage}
+            <PropertieInfo
+              size={properties.area}
+              bedroom={properties.rooms}
+              bathroom={properties.bathrooms}
+              garage={properties.garage}
+            />
+
+            <div className="mb-14 flex items-center justify-start gap-2 font-poppins text-sm font-bold text-VIsecondary-color desktop:mb-0">
+              <Image
+                src="/Icons/location.svg"
+                alt="Localização"
+                width={22}
+                height={28}
               />
-            )}
 
-            {isPropertie ? (
-              <div className="mb-14 flex items-center justify-start gap-2 font-poppins text-sm font-bold text-VIsecondary-color desktop:mb-0">
-                <Image
-                  src="/Icons/location.svg"
-                  alt="Localização"
-                  width={22}
-                  height={28}
-                />
-
-                <p>
-                  {properties.city} | {properties.state}
-                </p>
-              </div>
-            ) : (
-              <Link
-                href={`https://wa.me//+5579999102930?text=${encodeText}`}
-                className="mb-12 inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-VIsecondary-color px-4 py-2 text-sm font-medium text-VIprimary-color ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-                target="_blank"
-              >
-                Conversar com corretor
-              </Link>
-            )}
+              <p>
+                {properties.city} | {properties.state}
+              </p>
+            </div>
           </div>
 
           <Image
