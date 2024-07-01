@@ -1,7 +1,7 @@
 import ArrowBack from "@/app/_components/ArrowBack/ArrowBack";
 import Hero from "@/app/_components/Hero/Hero";
+import { Tproperties } from "@/app/types/propertiesType";
 import Image from "next/image";
-import { Tproperties } from "../page";
 import PhotoSlider from "./_components/PhotoSlider/PhotoSlider";
 import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
 
