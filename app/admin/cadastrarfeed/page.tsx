@@ -1,7 +1,7 @@
 import Title from "../../_components/Title/Title";
 import RegisterFeedForm from "./_components/RegisterFeedForm/RegisterFeedForm";
 
-const AdminFeed = () => {
+const Cadastrarfeed = () => {
   return (
     <main className="flex w-screen flex-col items-center justify-center ">
       <div className="w-full desktop:mt-20">
@@ -15,4 +15,4 @@ const AdminFeed = () => {
   );
 };
 
-export default AdminFeed;
+export default Cadastrarfeed;

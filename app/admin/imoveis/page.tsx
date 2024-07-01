@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import Title from "../../_components/Title/Title";
 import PropertieEditCard from "./_components/PropertieEditCard.PropertieEditCard";
 
-const AdminCorretores = async () => {
+const AdminImoveis = async () => {
   async function getProperties() {
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property`,
@@ -22,7 +22,7 @@ const AdminCorretores = async () => {
 
   return (
     <main className="flex w-screen flex-col items-center justify-center pt-20">
-      <Title className="my-14 text-[3rem]">corretores cadastrados</Title>
+      <Title className="my-14 text-[3rem]">Imóveis cadastrados</Title>
 
       <div className="mb-20 flex w-[66.85rem] flex-wrap justify-center gap-20">
         {properties.map((propertie: Tproperties) => (
@@ -38,4 +38,4 @@ const AdminCorretores = async () => {
   );
 };
 
-export default AdminCorretores;
+export default AdminImoveis;
