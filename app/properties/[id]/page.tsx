@@ -6,6 +6,7 @@ import PhotoSlider from "./_components/PhotoSlider/PhotoSlider";
 import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
 
 const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
+  console.log(params);
   async function getProperties() {
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/${params.id}`

@@ -1,37 +1,26 @@
+import { revalidatePath } from "next/cache";
 import Hero from "../_components/Hero/Hero";
+import { Tproperties } from "../types/propertiesType";
 import MenuSliderProperties from "./MenuSliderProperties/MenuSliderProperties";
 import PropertieCard from "./PropertieCard/PropertieCard";
-
-export type Tproperties = {
-  _id: string;
-  name: string;
-  category: string[];
-  rooms: number;
-  bathrooms: number;
-  area: number;
-  garage: number;
-  description: string;
-  price: number;
-  rent: number;
-  image: string[];
-  taxe: number;
-  city: string;
-  state: string;
-};
 
 const Properties = async () => {
   async function getProperties() {
     const res = await fetch(
-      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/property"
+      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property`,
+      { cache: "no-store" }
     );
 
     if (!res.ok) {
-      throw new Error("Falha ao consultar o Banco de dados!");
+      //load not found
+      console.log("Sem propriedades");
     }
+
+    revalidatePath("/properties", "page");
 
     return res.json();
   }
-  const properties = await getProperties();
+  const filteredProperties = await getProperties();
 
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:pt-0">
@@ -44,17 +33,21 @@ const Properties = async () => {
       <MenuSliderProperties />
 
       <div className="flex flex-col items-center justify-center desktop:w-screen desktop:flex-row desktop:flex-wrap desktop:gap-x-10 desktop:gap-y-12">
-        {properties.map((propertie: Tproperties) => (
-          <PropertieCard
-            key={propertie._id}
-            id={String(propertie._id)}
-            src={propertie.image[0]}
-            alt={propertie.name}
-            title={propertie.name}
-            city={propertie.city}
-            state={propertie.state}
-          />
-        ))}
+        {filteredProperties ? (
+          filteredProperties.map((propertie: Tproperties) => (
+            <PropertieCard
+              key={propertie._id}
+              id={String(propertie._id)}
+              src={propertie.image[0]}
+              alt={propertie.name}
+              title={propertie.name}
+              city={propertie.city}
+              state={propertie.state}
+            />
+          ))
+        ) : (
+          <p>Não temos propriedades a venda no momento!</p>
+        )}
       </div>
     </main>
   );

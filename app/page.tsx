@@ -31,6 +31,20 @@ const Home = async () => {
   }
   const Feeds: TFeedProps = await getFeed();
 
+  async function getAllHome() {
+    const res = await fetch(
+      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/home"
+    );
+
+    if (!res.ok) {
+      throw new Error("Falha ao consultar o Banco de dados!");
+    }
+
+    return res.json();
+  }
+  const homeData = await getAllHome();
+  console.log(homeData);
+
   return (
     <main className="flex w-screen flex-col items-center justify-between bg-VIligth-color">
       <VideoPlayer />

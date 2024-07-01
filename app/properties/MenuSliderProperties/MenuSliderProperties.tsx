@@ -24,11 +24,13 @@ const MenuSliderProperties = () => {
         <p
           key={index}
           className="flex h-[2.5rem] flex-col items-center justify-center rounded-[.5rem] border-[.0625rem] border-VIprimary-color p-3 font-archivo text-sm font-bold text-VIprimary-color desktop:hover:text-VIsecondary-color"
+          // onClick={() => setFilter(item)}
         >
           {item}
         </p>
       ))}
 
+      {/* <Select onValueChange={(value) => setFilter(value)}> */}
       <Select>
         <SelectTrigger className="w-[11.25rem] border border-VIprimary-color desktop:flex desktop:justify-center desktop:gap-6">
           <SelectValue placeholder="Cidade" />
