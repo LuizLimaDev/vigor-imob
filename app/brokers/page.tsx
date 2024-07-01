@@ -6,6 +6,7 @@ export type Tbrokers = {
   name: string;
   description: string;
   profileImage: string;
+  creci: string;
 };
 
 const Brokers = async () => {
@@ -40,7 +41,7 @@ const Brokers = async () => {
             alt={broker.name}
             name={broker.name}
             text={broker.description}
-            creci={broker._id}
+            creci={broker.creci}
           />
         ))}
       </div>
