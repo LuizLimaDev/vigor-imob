@@ -10,20 +10,36 @@ import { usePathname } from "next/navigation";
 const UserMenus = () => {
   const pathname = usePathname();
   const isAdmin = pathname.includes("admin");
+  console.log("caminho: ", pathname);
 
   return (
     <div
       className={`${isAdmin === true ? "hidden" : "flex"} flex w-full justify-between`}
     >
-      <Link href="/">Home</Link>
+      <Link
+        href="/"
+        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname === "/" && "text-VIsecondary-color"}`}
+      >
+        Home
+      </Link>
 
-      <Link href="/about">Sobre nós</Link>
+      <Link
+        href="/about"
+        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("about") && "text-VIsecondary-color"}`}
+      >
+        Sobre nós
+      </Link>
 
-      <Link href="/register">Cadastre imóveis</Link>
+      <Link
+        href="/register"
+        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("register") && "text-VIsecondary-color"}`}
+      >
+        Cadastre imóveis
+      </Link>
 
       <HoverCard openDelay={0}>
         <HoverCardTrigger asChild>
-          <p>Contato</p>
+          <p className="hover:text-VIsecondary-color">Contato</p>
         </HoverCardTrigger>
         <HoverCardContent>
           <div>
@@ -75,9 +91,19 @@ const UserMenus = () => {
         </HoverCardContent>
       </HoverCard>
 
-      <Link href="/brokers">Corretores</Link>
+      <Link
+        href="/brokers"
+        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("brokers") && "text-VIsecondary-color"}`}
+      >
+        Corretores
+      </Link>
 
-      <Link href="/properties">Todos imóveis</Link>
+      <Link
+        href="/properties"
+        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("properties") && "text-VIsecondary-color"}`}
+      >
+        Todos imóveis
+      </Link>
     </div>
   );
 };
