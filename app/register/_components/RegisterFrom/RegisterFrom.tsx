@@ -12,20 +12,20 @@ import {
 import { Input } from "@/app/_components/ui/input";
 import { useForm } from "react-hook-form";
 
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Textarea } from "@/app/_components/ui/textarea";
 import {
-  SelectItem,
   Select,
   SelectContent,
   SelectGroup,
+  SelectItem,
   SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/app/_components/ui/select";
+import { Textarea } from "@/app/_components/ui/textarea";
 import whatsMsg from "@/services/whatsMsg";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import * as z from "zod";
 
 const propertiesType = ["Casa", "Apartamento", "Comercial", "Rural", "Praia"];
 
@@ -76,8 +76,6 @@ const RegisterForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-
     const name = values.name;
     const phone = values.phone;
     const email = values.email;
@@ -100,8 +98,7 @@ const RegisterForm = () => {
       text
     );
 
-    console.log(msg);
-    router.push(msg);
+    -router.push(msg);
   }
 
   return (

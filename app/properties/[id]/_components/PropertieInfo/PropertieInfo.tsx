@@ -1,13 +1,24 @@
 import Image from "next/image";
 
 export type TProps = {
-  size: number | undefined;
-  bedroom: number | undefined;
-  bathroom: number | undefined;
-  garage: number | undefined;
+  size: string | undefined;
+  bedroom: string | undefined;
+  bathroom: string | undefined;
+  garage: string | undefined;
+  price: string | undefined;
+  rent: string | undefined;
+  taxe: string | undefined;
 };
 
-const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
+const PropertieInfo = ({
+  size,
+  bedroom,
+  bathroom,
+  garage,
+  price,
+  rent,
+  taxe,
+}: TProps) => {
   return (
     <>
       {/* infos */}
@@ -28,7 +39,7 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           />
           <p>
             {bedroom} quarto
-            {bedroom! > 1 ? "s" : ""}
+            {bedroom! > "1" ? "s" : ""}
           </p>
         </div>
 
@@ -42,7 +53,7 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           />
           <p>
             {bathroom} banheiro
-            {bathroom! > 1 ? "s" : ""}
+            {bathroom! > "1" ? "s" : ""}
           </p>
         </div>
 
@@ -51,22 +62,22 @@ const PropertieInfo = ({ size, bedroom, bathroom, garage }: TProps) => {
           <Image src="/Icons/car.svg" alt="banheiros" width={30} height={22} />
           <p>
             {garage} carro
-            {garage! > 1 ? "s" : ""}
+            {garage! > "1" ? "s" : ""}
           </p>
         </div>
       </div>
 
       <div className="mb-6 zero:hidden desktop:flex desktop:w-[32.0625rem] desktop:justify-between">
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
-          Compra: <span className="text-VIsecondary-color">$400.000</span>
+          Compra: <span className="text-VIsecondary-color">{price}</span>
         </p>
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
-          Aluguel: <span className="text-VIsecondary-color">$1.500</span>
+          Aluguel: <span className="text-VIsecondary-color">{rent}</span>
         </p>
 
         {/* TODO - condicional se houver condominio p aparecer */}
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
-          Condomínio: <span className="text-VIsecondary-color">$1.500</span>
+          Condomínio: <span className="text-VIsecondary-color">{taxe}</span>
         </p>
       </div>
     </>

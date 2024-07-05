@@ -1,3 +1,4 @@
+import { priceConvert } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,11 +7,22 @@ export type TProps = {
   src: string;
   alt: string;
   title: string;
-  city: string | undefined;
-  state: string | undefined;
+  city: string;
+  state: string;
+  price: string;
+  rent: string;
 };
 
-const PropertieCard = ({ id, src, alt, title, city, state }: TProps) => {
+const PropertieCard = ({
+  id,
+  src,
+  alt,
+  title,
+  city,
+  state,
+  price,
+  rent,
+}: TProps) => {
   return (
     <div className="mb-10 flex flex-col items-center justify-center desktop:w-[36.06rem]">
       <Image
@@ -30,10 +42,16 @@ const PropertieCard = ({ id, src, alt, title, city, state }: TProps) => {
 
           <div className="zero:hidden desktop:flex desktop:w-[21.1875rem] desktop:justify-between">
             <p className="font-archivo text-sm font-bold text-VIprimary-color">
-              Compra: <span className="text-VIsecondary-color">$400.000</span>
+              Compra:{" "}
+              <span className="text-VIsecondary-color">
+                ${priceConvert(price)}
+              </span>
             </p>
             <p className="font-archivo text-sm font-bold text-VIprimary-color">
-              Aluguel: <span className="text-VIsecondary-color">$1.500</span>
+              Aluguel:{" "}
+              <span className="text-VIsecondary-color">
+                ${priceConvert(rent)}
+              </span>
             </p>
           </div>
 

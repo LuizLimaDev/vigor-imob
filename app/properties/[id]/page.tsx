@@ -6,7 +6,6 @@ import PhotoSlider from "./_components/PhotoSlider/PhotoSlider";
 import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
 
 const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
-  console.log(params);
   async function getProperties() {
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/${params.id}`
@@ -19,7 +18,6 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
     return res.json();
   }
   const properties: Tproperties = await getProperties();
-  console.log(properties);
 
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center desktop:justify-center  desktop:pt-0">
@@ -36,7 +34,7 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
         <div className="gap-14 desktop:mt-28 desktop:flex desktop:px-20">
           <div className="desktop:min-w-[50%]">
             <h1 className="mb-2 font-poppins text-2xl font-bold text-VIprimary-color">
-              Paz e Tranquilidade
+              {properties.title}
             </h1>
 
             <p className=" mb-9 pr-4 text-justify font-poppins text-xs font-light text-VIprimary-color">
@@ -51,6 +49,9 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
               bedroom={properties.rooms}
               bathroom={properties.bathrooms}
               garage={properties.garage}
+              price={properties.price}
+              rent={properties.rent}
+              taxe={properties.taxe}
             />
 
             <div className="mb-14 flex items-center justify-start gap-2 font-poppins text-sm font-bold text-VIsecondary-color desktop:mb-0">
@@ -67,14 +68,16 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
             </div>
           </div>
 
-          <Image
-            src="/video-properties-details.png"
-            alt="imagem do imóvel"
-            width={577}
-            height={491}
-            sizes="100vw"
-            className="zero:hidden desktop:flex"
-          />
+          <iframe
+            width="577"
+            height="491"
+            src={properties.video}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="rounded-[0.5rem]"
+          ></iframe>
         </div>
 
         <ArrowBack />

@@ -13,33 +13,36 @@ import { Input } from "@/app/_components/ui/input";
 import { useForm } from "react-hook-form";
 
 import { Textarea } from "@/app/_components/ui/textarea";
-import { formSchema } from "@/schemas/propertiesSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { formSchema } from "@/schemas/propertyEditSchema";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import * as z from "zod";
 
-const RegisterPropertieForm = () => {
+function Values({ values }: any) {
+  useForm({ values });
+}
+
+const RegisterPropertieForm = ({ property }: any) => {
   const [files, setFiles] = useState<FileList | null>([]);
   const router = useRouter();
+  const values = property;
   const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      category: "",
       city: "",
       state: "",
-      title: "",
-      video: "",
       area: "",
       rooms: "",
       bathrooms: "",
       garage: "",
-      category: "",
       description: "",
       price: "",
       rent: "",
       taxe: "",
+      title: "",
     },
+    values,
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -54,16 +57,16 @@ const RegisterPropertieForm = () => {
     }
 
     const res = await fetch(
-      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/upload",
+      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/${property._id}`,
       {
-        method: "POST",
+        method: "PUT",
         body: formData,
       }
     );
 
     if (!res.ok) {
-      console.log(res);
-      throw new Error("Falha ao cadastrar na API");
+      console.log(res.text);
+      throw new Error("Falha da API");
     }
 
     router.push("/admin/imoveis");
@@ -93,7 +96,6 @@ const RegisterPropertieForm = () => {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="category"
@@ -103,7 +105,7 @@ const RegisterPropertieForm = () => {
                     Categoria
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Comercial, casa, alugel" {...field} />
+                    <Input placeholder="Nome e Sobrenome" {...field} />
                   </FormControl>
                   <FormMessage className="mt-1 desktop:ml-[3px]" />
                 </FormItem>
@@ -294,19 +296,20 @@ const RegisterPropertieForm = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Compra" type="number" {...field} />
+                        <Input placeholder="Compra" type="text" {...field} />
                       </FormControl>
                       <FormMessage className="mt-1 desktop:ml-[3px]" />
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="rent"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Aluguel" type="number" {...field} />
+                        <Input placeholder="Aluguel" type="text" {...field} />
                       </FormControl>
                       <FormMessage className="mt-1 desktop:ml-[3px]" />
                     </FormItem>
@@ -320,7 +323,7 @@ const RegisterPropertieForm = () => {
                       <FormControl>
                         <Input
                           placeholder="Condomínio"
-                          type="number"
+                          type="text"
                           {...field}
                         />
                       </FormControl>
@@ -334,7 +337,7 @@ const RegisterPropertieForm = () => {
         </div>
 
         <Button type="submit" className="mt-6 max-w-[6.187rem] self-center">
-          Cadastrar
+          Atualizar
         </Button>
       </form>
     </Form>

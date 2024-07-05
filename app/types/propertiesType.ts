@@ -1,16 +1,36 @@
 export type Tproperties = {
   _id: string;
   name: string;
+  title: string;
   category: string[];
-  rooms: number;
-  bathrooms: number;
-  area: number;
-  garage: number;
+  rooms: string;
+  bathrooms: string;
+  area: string;
+  garage: string;
   description: string;
-  price: number;
-  rent: number;
+  price: string;
+  rent: string;
   image: string[];
-  taxe: number;
+  video: string;
+  taxe: string;
   city: string;
   state: string;
+};
+
+export type TpropertiesPost = {
+  _id?: string;
+  name?: string;
+  title?: string;
+  category?: string;
+  rooms?: string;
+  bathrooms?: string;
+  area?: string;
+  garage?: string;
+  description?: string;
+  price?: string;
+  rent?: string;
+  image?: string;
+  taxe?: string;
+  city?: string;
+  state?: string;
 };

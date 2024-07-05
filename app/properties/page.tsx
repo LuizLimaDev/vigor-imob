@@ -21,6 +21,7 @@ const Properties = async () => {
     return res.json();
   }
   const filteredProperties = await getProperties();
+  console.log(filteredProperties);
 
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:pt-0">
@@ -33,7 +34,7 @@ const Properties = async () => {
       <MenuSliderProperties />
 
       <div className="flex flex-col items-center justify-center desktop:w-screen desktop:flex-row desktop:flex-wrap desktop:gap-x-10 desktop:gap-y-12">
-        {filteredProperties ? (
+        {!filteredProperties.error ? (
           filteredProperties.map((propertie: Tproperties) => (
             <PropertieCard
               key={propertie._id}
@@ -43,6 +44,8 @@ const Properties = async () => {
               title={propertie.name}
               city={propertie.city}
               state={propertie.state}
+              price={propertie.price}
+              rent={propertie.rent}
             />
           ))
         ) : (
