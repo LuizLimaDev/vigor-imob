@@ -23,7 +23,7 @@ const formSchema = z.object({
   }),
   photo: z
     .any()
-    .refine((files) => files?.length == 1, "Insira ao menos uma foto."),
+    .refine((files) => files?.length < 1, "Insira ao menos uma foto."),
   creci: z.string().min(3, {
     message: "O CRECI deve conter no mínimo 3 caracteres.",
   }),
