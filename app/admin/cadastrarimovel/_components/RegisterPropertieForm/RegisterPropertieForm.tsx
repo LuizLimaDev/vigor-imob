@@ -20,7 +20,9 @@ import { useState } from "react";
 import * as z from "zod";
 
 const RegisterPropertieForm = () => {
-  const [files, setFiles] = useState<FileList | null>([]);
+  const [files, setFiles] = useState<
+    FileList | (() => FileList | null) | null
+  >();
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
