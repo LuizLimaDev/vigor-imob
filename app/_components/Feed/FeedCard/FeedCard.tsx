@@ -9,7 +9,6 @@ export type TProps = {
 };
 
 const FeedCard = ({ id, index, src, title, text }: TProps) => {
-  console.log(id);
   return (
     <div className="mb-10 flex flex-col items-center justify-center desktop:flex-row desktop:gap-24">
       <iframe

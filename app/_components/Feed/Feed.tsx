@@ -16,7 +16,6 @@ const Feed = ({ feed }: TProps) => {
   const feeds = feed.map((item, index) => {
     return { ...item, index };
   });
-  console.log(feeds);
 
   return (
     <div className="mb-9 mt-8 flex flex-col justify-center gap-9 px-3 text-center">
