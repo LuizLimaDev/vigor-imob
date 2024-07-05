@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import FeaturedVenture from "./_components/FeaturedVenture/FeaturedVenture";
 import Feed from "./_components/Feed/Feed";
 import SectionTitleBar from "./_components/SectionTitleBar/SectionTitleBar";
@@ -20,12 +21,15 @@ export type TFeedProps = {
 const Home = async () => {
   async function getFeed() {
     const res = await fetch(
-      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed?page=1"
+      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed?page=1",
+      { next: { revalidate: 10 } }
     );
 
     if (!res.ok) {
       throw new Error("Falha ao consultar o Banco de dados!");
     }
+
+    revalidatePath("/properties");
 
     return res.json();
   }
