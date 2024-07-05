@@ -3,12 +3,14 @@
 import { Button } from "@/app/_components/ui/button";
 import { DialogClose } from "@/app/_components/ui/dialog";
 
-export type TProps = {
+const DeleteButton = ({
+  id,
+  deleteProperty,
+}: {
   id: string;
+  // eslint-disable-next-line no-unused-vars
   deleteProperty: (id: string) => void;
-};
-
-const DeleteButton = ({ id, deleteProperty }: TProps) => {
+}) => {
   return (
     <>
       <DialogClose asChild>

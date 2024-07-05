@@ -6,6 +6,7 @@ const UpdateProperty = ({
   editProperty,
   id,
 }: {
+  // eslint-disable-next-line no-unused-vars
   editProperty: (id: string) => void;
   id: string;
 }) => {

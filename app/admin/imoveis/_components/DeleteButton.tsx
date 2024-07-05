@@ -5,6 +5,7 @@ import { DialogClose } from "@/app/_components/ui/dialog";
 
 export type TProps = {
   id: string;
+  // eslint-disable-next-line no-unused-vars
   deleteProperty: (id: string) => void;
 };
 

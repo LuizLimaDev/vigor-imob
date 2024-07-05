@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 const UserMenus = () => {
   const pathname = usePathname();
   const isAdmin = pathname.includes("admin");
-  console.log("caminho: ", pathname);
 
   return (
     <div
