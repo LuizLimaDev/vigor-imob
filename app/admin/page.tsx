@@ -47,14 +47,12 @@ const Admin = () => {
       redirect: false,
     });
 
-    console.log(result);
-
     if (result?.ok === false) {
       setSignInErrors(result.error);
       return;
     }
 
-    router.replace("admin/imoveiscadastrados");
+    router.replace("admin/imoveis");
   }
 
   return (
