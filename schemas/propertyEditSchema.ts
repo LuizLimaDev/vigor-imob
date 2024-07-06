@@ -5,7 +5,7 @@ export const formSchema = z.object({
   category: z.string(),
   city: z.string(),
   state: z.string(),
-  photos: z.any(),
+  image: z.any(),
   video: z.any().optional(),
   area: z.string(),
   rooms: z.string(),
