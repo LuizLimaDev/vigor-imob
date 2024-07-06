@@ -19,10 +19,26 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import * as z from "zod";
 
+type ValuesType = {
+  name: string;
+  category: string;
+  city: string;
+  state: string;
+  title: string;
+  video: string;
+  area: string;
+  rooms: string;
+  bathrooms: string;
+  garage: string;
+  description: string;
+  price: string;
+  rent: string;
+  taxe: string;
+  image?: any;
+};
+
 const RegisterPropertieForm = () => {
-  const [files, setFiles] = useState<
-    FileList | (() => FileList | null) | null
-  >();
+  const [files, setFiles] = useState<FileList | null>();
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,11 +60,12 @@ const RegisterPropertieForm = () => {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     const formData = new FormData();
+    const values: ValuesType = data;
 
     for (let key in values) {
-      formData.append(key, values[key]);
+      formData.append(key, values[key as keyof ValuesType] as string | Blob);
     }
 
     for (let i = 0; i < files?.length!; i++) {
