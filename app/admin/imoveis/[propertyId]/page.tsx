@@ -2,7 +2,6 @@ import Title from "../../../_components/Title/Title";
 import RegisterPropertieForm from "./_components/RegisterPropertieForm/RegisterPropertieForm";
 
 const EditarImovel = async ({ params }: { params: { propertyId: string } }) => {
-  //fetch para coletar dados do protudo a editar
   async function getProperties() {
     "use server";
     const res = await fetch(
