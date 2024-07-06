@@ -300,7 +300,6 @@ const RegisterPropertieForm = ({ property }: any) => {
                 )}
               />
 
-              {/* TODO - controlar e colocar as restricoes */}
               <div className="flex flex-col gap-1">
                 <FormLabel className="mb-1 mt-[1.75rem] font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                   Compra

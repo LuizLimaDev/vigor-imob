@@ -43,8 +43,6 @@ const RegisterFeedForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-
     const res = await fetch(
       "https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed",
       {

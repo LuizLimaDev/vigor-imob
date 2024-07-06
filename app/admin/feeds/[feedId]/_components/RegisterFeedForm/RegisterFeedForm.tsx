@@ -62,8 +62,6 @@ const RegisterFeedForm = ({ feed }: any) => {
       throw new Error("Falha na comunicação com a API");
     }
 
-    console.log("editado");
-
     router.push("/admin/feeds");
     router.refresh();
   }

@@ -75,7 +75,6 @@ const PropertieInfo = ({
           Aluguel: <span className="text-VIsecondary-color">{rent}</span>
         </p>
 
-        {/* TODO - condicional se houver condominio p aparecer */}
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
           Condomínio: <span className="text-VIsecondary-color">{taxe}</span>
         </p>

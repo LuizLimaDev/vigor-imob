@@ -18,7 +18,6 @@ export const formSchema = z.object({
   }),
 
   image: z.any(),
-  // .refine((files) => files?.length < 1, "Insira ao menos uma foto."),
   video: z.string(),
   area: z
     .string({

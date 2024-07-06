@@ -21,8 +21,6 @@ const Properties = async () => {
     return res.json();
   }
   const filteredProperties = await getProperties();
-  console.log(filteredProperties);
-
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:pt-0">
       <Hero

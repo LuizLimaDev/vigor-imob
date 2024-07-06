@@ -39,8 +39,6 @@ const Admin = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-
     const result = await signIn("credentials", {
       username: values.username,
       password: values.password,
