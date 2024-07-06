@@ -21,11 +21,11 @@ const formSchema = z.object({
   title: z.string().min(3, {
     message: "O título deve conter no mínimo 3 caracteres.",
   }),
-  video: z
-    .any()
-    .refine((files) => files?.length == 1, "Insira ao menos um vídeo."),
+  video: z.string().min(3, {
+    message: "O vídeo deve conter um link embed do youtube.",
+  }),
 
-  text: z
+  description: z
     .string()
     .min(10, { message: "Escreva pelo menos 10 caracteres." })
     .max(200, { message: "O texto não pode ter mais de 200 caracteres" }),
@@ -37,14 +37,32 @@ const RegisterFeedForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: "",
-      text: "",
+      video: "",
+      description: "",
     },
   });
-  const videoRef = form.register("video");
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    router.push("/admin");
+
+    const res = await fetch(
+      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      }
+    );
+
+    if (!res.ok) {
+      console.log(res.text);
+      throw new Error("Falha na comunicação com a API");
+    }
+
+    router.push("/admin/feeds");
+    router.refresh();
   }
 
   return (
@@ -54,7 +72,7 @@ const RegisterFeedForm = () => {
         className=" flex w-full flex-col justify-start gap-2 px-6 desktop:w-full desktop:items-center"
       >
         <div className="z-50 desktop:flex desktop:flex-row desktop:gap-10">
-          <div className="desktop:flex desktop:w-[21.375rem] desktop:flex-col desktop:gap-6">
+          <div className="desktop:flex desktop:w-[21.375rem] desktop:flex-col desktop:gap-14">
             <FormField
               control={form.control}
               name="title"
@@ -74,20 +92,15 @@ const RegisterFeedForm = () => {
             <FormField
               control={form.control}
               name="video"
-              render={() => (
-                <FormItem className="relative mt-10 flex flex-col">
-                  <FormLabel className="mb-1 text-VIprimary-color">
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-archivo text-sm text-VIprimary-color">
                     Vídeo
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      type="file"
-                      placeholder="Fotos"
-                      accept="video/*"
-                      {...videoRef}
-                    />
+                    <Input placeholder="Link youtube embed" {...field} />
                   </FormControl>
-                  <FormMessage className="absolute -bottom-5 mt-1 desktop:ml-[3px]" />
+                  <FormMessage className="absolute mt-1 desktop:ml-[3px]" />
                 </FormItem>
               )}
             />
@@ -100,7 +113,7 @@ const RegisterFeedForm = () => {
               </FormLabel>
               <FormField
                 control={form.control}
-                name="text"
+                name="description"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>

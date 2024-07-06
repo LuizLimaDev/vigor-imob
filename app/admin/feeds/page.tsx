@@ -8,7 +8,7 @@ const AdminFeeds = async () => {
     "use server";
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed`,
-      { next: { revalidate: 10 } }
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {

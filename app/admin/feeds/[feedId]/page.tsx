@@ -6,7 +6,7 @@ const Cadastrarfeed = async ({ params }: { params: { feedId: string } }) => {
     "use server";
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed/${params.feedId}`,
-      { next: { revalidate: 10 } }
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {
@@ -18,7 +18,6 @@ const Cadastrarfeed = async ({ params }: { params: { feedId: string } }) => {
     return data;
   }
   const feed = await getFeed();
-  console.log(feed);
 
   return (
     <main className="flex w-screen flex-col items-center justify-center ">
@@ -27,7 +26,7 @@ const Cadastrarfeed = async ({ params }: { params: { feedId: string } }) => {
       </div>
 
       <div className="mx-2 my-10 w-[98%] rounded-[.5rem] bg-[#F7FAFE] py-4">
-        <RegisterFeedForm />
+        <RegisterFeedForm feed={feed} />
       </div>
     </main>
   );
