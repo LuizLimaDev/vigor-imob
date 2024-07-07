@@ -13,54 +13,49 @@ import { Input } from "@/app/_components/ui/input";
 import { useForm } from "react-hook-form";
 
 import { Textarea } from "@/app/_components/ui/textarea";
-import { formSchema } from "@/schemas/brokerSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { editFormSchema } from "@/schemas/brokerSchema";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import * as z from "zod";
 
 type ValuesType = {
   name: string;
-  creci: string;
   description: string;
+  creci: string;
 };
 
-const RegisterBrokerForm = () => {
-  const [files, setFiles] = useState<FileList | null>(null);
-  const [error, setError] = useState<string>("");
+const RegisterBrokerForm = ({ broker }: any) => {
+  const [files, setFiles] = useState<FileList | null>();
   const router = useRouter();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const values = broker;
+  const form = useForm<z.infer<typeof editFormSchema>>({
     defaultValues: {
       name: "",
       creci: "",
-      text: "",
+      description: "",
     },
+    values,
   });
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof editFormSchema>) {
     const formData = new FormData();
     const values: ValuesType = {
       name: data.name,
       creci: data.creci,
-      description: data.text,
+      description: data.description,
     };
 
     for (let key in values) {
       formData.append(key, values[key as keyof ValuesType] as string | Blob);
     }
-
     if (files) {
       formData.append("profileImage", files![0]);
-    } else {
-      setError("A foto é obrigatórioa");
-      return;
     }
 
     const res = await fetch(
-      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/employ/upload",
+      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/employ/${broker._id}`,
       {
-        method: "POST",
+        method: "PUT",
         body: formData,
       }
     );
@@ -120,11 +115,6 @@ const RegisterBrokerForm = () => {
                     </FormControl>
                   </div>
                   <FormMessage className="mt-1 desktop:ml-[3px]" />
-                  {error && (
-                    <FormMessage className="mt-1 desktop:ml-[3px]">
-                      {error}
-                    </FormMessage>
-                  )}
                 </FormItem>
               )}
             />
@@ -152,7 +142,7 @@ const RegisterBrokerForm = () => {
                 </FormLabel>
                 <FormField
                   control={form.control}
-                  name="text"
+                  name="description"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
@@ -172,7 +162,7 @@ const RegisterBrokerForm = () => {
               type="submit"
               className="z-50 mt-6 max-w-[6.187rem] self-center"
             >
-              Cadastrar
+              Atualizar
             </Button>
           </div>
         </div>

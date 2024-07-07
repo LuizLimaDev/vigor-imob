@@ -1,36 +1,36 @@
-import { Tproperties } from "@/app/types/propertiesType";
+import { TBroker } from "@/app/types/brokersType";
 import { revalidatePath } from "next/cache";
 import Title from "../../_components/Title/Title";
-import PropertieEditCard from "./_components/PropertieEditCard.PropertieEditCard";
+import BrokerEditCard from "./_components/BrokerEditCard";
 
 const AdminCorretores = async () => {
-  async function getProperties() {
+  async function getBrokers() {
     const res = await fetch(
-      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property`,
+      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/employ`,
       { cache: "no-store" }
     );
 
     if (!res.ok) {
-      console.log("Sem propriedades");
+      console.log("Sem corretores");
     }
 
-    revalidatePath("/admin/imoveiscadastrados", "page");
+    revalidatePath("/admin/corretores", "page");
 
     return res.json();
   }
-  const properties = await getProperties();
+  const brokers: TBroker[] = await getBrokers();
 
   return (
     <main className="flex w-screen flex-col items-center justify-center pt-20">
-      <Title className="my-14 text-[3rem]">corretores cadastrados</Title>
+      <Title className="my-14 text-[3rem]">Corretores cadastrados</Title>
 
       <div className="mb-20 flex w-[66.85rem] flex-wrap justify-center gap-20">
-        {properties.map((propertie: Tproperties) => (
-          <PropertieEditCard
-            key={propertie._id}
-            id={propertie._id}
-            photo={propertie.image[0]}
-            title={propertie.name}
+        {brokers.map((broker: TBroker) => (
+          <BrokerEditCard
+            key={broker._id}
+            id={broker._id}
+            image={broker.profileImage}
+            title={broker.name}
           />
         ))}
       </div>

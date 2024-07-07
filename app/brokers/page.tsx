@@ -12,7 +12,10 @@ export type Tbrokers = {
 const Brokers = async () => {
   async function getBrokers() {
     const res = await fetch(
-      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/employ"
+      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/employ",
+      {
+        next: { revalidate: 10 },
+      }
     );
 
     if (!res.ok) {
@@ -22,6 +25,7 @@ const Brokers = async () => {
     return res.json();
   }
   const brokers = await getBrokers();
+  console.log("Corretores: ", brokers);
 
   return (
     <main className="desktop: w-screen items-center pt-16 desktop:flex desktop:flex-col desktop:justify-center desktop:pt-20">
@@ -40,7 +44,7 @@ const Brokers = async () => {
             src={broker.profileImage}
             alt={broker.name}
             name={broker.name}
-            text={broker.description}
+            description={broker.description}
             creci={broker.creci}
           />
         ))}
