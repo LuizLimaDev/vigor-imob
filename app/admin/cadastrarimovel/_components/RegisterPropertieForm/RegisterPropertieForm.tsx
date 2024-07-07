@@ -39,6 +39,7 @@ type ValuesType = {
 
 const RegisterPropertieForm = () => {
   const [files, setFiles] = useState<FileList | null>();
+  const [error, setError] = useState<string>("");
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -68,8 +69,13 @@ const RegisterPropertieForm = () => {
       formData.append(key, values[key as keyof ValuesType] as string | Blob);
     }
 
-    for (let i = 0; i < files?.length!; i++) {
-      formData.append("image", files![i]);
+    if (files) {
+      for (let i = 0; i < files?.length!; i++) {
+        formData.append("image", files![i]);
+      }
+    } else {
+      setError("Insira ao menos uma foto.");
+      return;
     }
 
     const res = await fetch(
@@ -203,6 +209,11 @@ const RegisterPropertieForm = () => {
                     </FormControl>
                   </div>
                   <FormMessage className="mt-1 desktop:ml-[3px]" />
+                  {error && (
+                    <FormMessage className="mt-1 desktop:ml-[3px]">
+                      {error}
+                    </FormMessage>
+                  )}
                 </FormItem>
               )}
             />
