@@ -5,19 +5,16 @@ import { DialogClose } from "@/app/_components/ui/dialog";
 
 const DeleteButton = ({
   id,
-  deleteProperty,
+  deleteFeed,
 }: {
   id: string;
   // eslint-disable-next-line no-unused-vars
-  deleteProperty: (id: string) => void;
+  deleteFeed: (id: string) => void;
 }) => {
   return (
     <>
       <DialogClose asChild>
-        <Button
-          onClick={() => deleteProperty(id)}
-          className="text-VIligth-color"
-        >
+        <Button onClick={() => deleteFeed(id)} className="text-VIligth-color">
           Sim
         </Button>
       </DialogClose>

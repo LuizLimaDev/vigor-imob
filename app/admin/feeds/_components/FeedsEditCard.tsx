@@ -22,7 +22,7 @@ type TProps = {
 };
 
 const FeedsEditCard = ({ id, video, title }: TProps) => {
-  async function deleteProperty(id: string) {
+  async function deleteFeed(id: string) {
     "use server";
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed/${id}`,
@@ -70,7 +70,7 @@ const FeedsEditCard = ({ id, video, title }: TProps) => {
             </DialogHeader>
 
             <DialogFooter className="w-full flex-row items-center justify-center gap-6">
-              <DeleteButton id={id} deleteProperty={deleteProperty} />
+              <DeleteButton id={id} deleteFeed={deleteFeed} />
               <DialogClose asChild>
                 <Button className="bg-red-500 text-VIligth-color">Não</Button>
               </DialogClose>
