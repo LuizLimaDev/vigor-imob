@@ -1,7 +1,7 @@
 import Title from "../Title/Title";
 import VentureCard from "./VentureCard/VentureCard";
 
-const FeaturedVenture = ({ ventures }: any) => {
+const FeaturedVenture = ({ ventures }: { ventures: string[] }) => {
   const FeaturedVentureDb = ventures;
 
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Select,
   SelectContent,
@@ -7,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/_components/ui/select";
+import { filterProperties, filterPropertiesCity } from "@/app/action/actions";
 
 const MenuSliderProperties = ({ filterButtons, cities }: any) => {
   return (
@@ -15,12 +18,13 @@ const MenuSliderProperties = ({ filterButtons, cities }: any) => {
         <p
           key={index}
           className="flex h-[2.5rem] flex-col items-center justify-center rounded-[.5rem] border-[.0625rem] border-VIprimary-color p-3 font-archivo text-sm font-bold capitalize text-VIprimary-color hover:border-VIsecondary-color desktop:hover:text-VIsecondary-color"
+          onClick={() => filterProperties([item])}
         >
           {item}
         </p>
       ))}
 
-      <Select>
+      <Select onValueChange={(e) => filterPropertiesCity(e)}>
         <SelectTrigger className="w-[11.25rem] border border-VIprimary-color desktop:flex desktop:justify-center desktop:gap-6">
           <SelectValue placeholder="Cidade" />
         </SelectTrigger>

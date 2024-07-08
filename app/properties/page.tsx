@@ -4,12 +4,18 @@ import { Tproperties } from "../types/propertiesType";
 import MenuSliderProperties from "./MenuSliderProperties/MenuSliderProperties";
 import PropertieCard from "./PropertieCard/PropertieCard";
 
-const Properties = async () => {
+const Properties = async ({ searchParams }: { searchParams: string }) => {
+  const key: string = Object.keys(searchParams)[0];
+  const value = searchParams[key];
+
   async function getProperties() {
-    const res = await fetch(
-      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property`,
-      { cache: "no-store" }
-    );
+    let url = "https://king-prawn-app-vxkkv.ondigitalocean.app/api/property";
+
+    if (Object.keys(searchParams).length > 0) {
+      url = url + `?${value}`;
+    }
+
+    const res = await fetch(`${url}`, { cache: "no-store" });
 
     if (!res.ok) {
       console.log("Sem propriedades");
@@ -17,7 +23,9 @@ const Properties = async () => {
 
     revalidatePath("/properties", "page");
 
-    return res.json();
+    const data = await res.json();
+
+    return data;
   }
   const filteredProperties: Tproperties[] = await getProperties();
   const categories = filteredProperties
