@@ -25,7 +25,6 @@ const Brokers = async () => {
     return res.json();
   }
   const brokers = await getBrokers();
-  console.log("Corretores: ", brokers);
 
   return (
     <main className="desktop: w-screen items-center pt-16 desktop:flex desktop:flex-col desktop:justify-center desktop:pt-20">
