@@ -34,12 +34,12 @@ const PropertieCard = ({
       />
 
       <div className="mb-10 flex flex-col items-center justify-center desktop:w-[36.0625rem] desktop:flex-row desktop:justify-between">
-        <div className="flex flex-col items-center justify-center desktop:gap-1">
+        <div className="flex flex-col items-center justify-center gap-1 desktop:gap-1">
           <h3 className="mt-6 font-poppins text-2xl font-bold text-VIprimary-color desktop:self-start">
             {title}
           </h3>
 
-          <div className="zero:hidden desktop:flex desktop:w-[21.1875rem] desktop:justify-between">
+          <div className="flex gap-10 desktop:flex desktop:w-[21.1875rem] desktop:justify-between">
             <p className="font-archivo text-sm font-bold text-VIprimary-color">
               Compra:
               <span className="text-VIsecondary-color"> ${price}</span>
