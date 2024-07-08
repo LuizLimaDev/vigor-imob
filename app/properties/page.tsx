@@ -52,7 +52,11 @@ const Properties = async ({
         title="Escolha seu imóvel"
         styles="desktop:h-[30rem] desktop:flex"
       />
-      <MenuSliderProperties filterButtons={filterButtons} cities={cities} />
+      <MenuSliderProperties
+        filterButtons={filterButtons}
+        cities={cities}
+        searchParams={value ? value : ""}
+      />
 
       <div className="flex flex-col items-center justify-center desktop:w-screen desktop:flex-row desktop:flex-wrap desktop:gap-x-10 desktop:gap-y-12">
         {filteredProperties.map((propertie: Tproperties) => (

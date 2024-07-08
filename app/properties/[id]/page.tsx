@@ -23,7 +23,7 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
       <iframe
         width="0"
         height="0"
-        src={`${properties.video}&autoplay=1`}
+        src={`${properties.video}&autoplay=1&mute=1`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
@@ -72,14 +72,14 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
           </div>
 
           <iframe
-            width="577"
+            width="0"
             height="491"
             src={properties.video}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            className="rounded-[0.5rem]"
+            className="mb-20 w-[95%] rounded-[0.5rem] desktop:w-[577px]"
           />
         </div>
 
