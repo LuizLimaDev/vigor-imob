@@ -4,7 +4,15 @@ import { Tproperties } from "../types/propertiesType";
 import MenuSliderProperties from "./MenuSliderProperties/MenuSliderProperties";
 import PropertieCard from "./PropertieCard/PropertieCard";
 
-const Properties = async ({ searchParams }: { searchParams: string }) => {
+type TsearchParams = {
+  [key: string]: string;
+};
+
+const Properties = async ({
+  searchParams,
+}: {
+  searchParams: TsearchParams;
+}) => {
   const key: string = Object.keys(searchParams)[0];
   const value = searchParams[key];
 
