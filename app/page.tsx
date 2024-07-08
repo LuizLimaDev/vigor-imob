@@ -47,16 +47,15 @@ const Home = async () => {
     return res.json();
   }
   const homeData = await getAllHome();
-  console.log(homeData);
 
   return (
     <main className="flex w-screen flex-col items-center justify-between bg-VIligth-color">
       <VideoPlayer />
 
-      <FeaturedVenture />
+      <FeaturedVenture ventures={homeData[0].highlights} />
 
       {/* fazer condicional para exibir imoveis story */}
-      <VideoStory />
+      <VideoStory stories={homeData[0].story} />
 
       <div>
         <SectionTitleBar>Novidades</SectionTitleBar>
