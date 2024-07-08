@@ -1,4 +1,3 @@
-import { priceConvert } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,16 +41,12 @@ const PropertieCard = ({
 
           <div className="zero:hidden desktop:flex desktop:w-[21.1875rem] desktop:justify-between">
             <p className="font-archivo text-sm font-bold text-VIprimary-color">
-              Compra:{" "}
-              <span className="text-VIsecondary-color">
-                ${priceConvert(price)}
-              </span>
+              Compra:
+              <span className="text-VIsecondary-color"> ${price}</span>
             </p>
             <p className="font-archivo text-sm font-bold text-VIprimary-color">
-              Aluguel:{" "}
-              <span className="text-VIsecondary-color">
-                ${priceConvert(rent)}
-              </span>
+              Aluguel:
+              <span className="text-VIsecondary-color"> ${rent}</span>
             </p>
           </div>
 

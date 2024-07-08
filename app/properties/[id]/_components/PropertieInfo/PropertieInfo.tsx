@@ -26,7 +26,7 @@ const PropertieInfo = ({
         {/* size */}
         <div className="flex w-[9rem] items-end justify-start gap-2">
           <Image src="/Icons/size.svg" alt="tamanho" width={24} height={24} />
-          <p>{size}</p>
+          <p>{size}m²</p>
         </div>
 
         {/* bedroom */}
@@ -69,14 +69,14 @@ const PropertieInfo = ({
 
       <div className="mb-6 zero:hidden desktop:flex desktop:w-[32.0625rem] desktop:justify-between">
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
-          Compra: <span className="text-VIsecondary-color">{price}</span>
+          Compra: <span className="text-VIsecondary-color">${price}</span>
         </p>
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
-          Aluguel: <span className="text-VIsecondary-color">{rent}</span>
+          Aluguel: <span className="text-VIsecondary-color">${rent}</span>
         </p>
 
         <p className="font-archivo text-sm font-bold text-VIprimary-color">
-          Condomínio: <span className="text-VIsecondary-color">{taxe}</span>
+          Condomínio: <span className="text-VIsecondary-color">${taxe}</span>
         </p>
       </div>
     </>

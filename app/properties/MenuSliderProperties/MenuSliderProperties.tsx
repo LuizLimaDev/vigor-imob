@@ -8,22 +8,13 @@ import {
   SelectValue,
 } from "@/app/_components/ui/select";
 
-const filterButtons = ["Todos", "Novos", "Usados", "Loteamento"];
-const cities = [
-  "São Paulo",
-  "Fortaleza",
-  "Rio de janeiro",
-  "Bahia",
-  "João Pessoa",
-];
-
-const MenuSliderProperties = () => {
+const MenuSliderProperties = ({ filterButtons, cities }: any) => {
   return (
     <div className="my-8 ml-5 flex gap-4 overflow-scroll desktop:z-50 desktop:my-16 desktop:items-center desktop:justify-center [&::-webkit-scrollbar]:hidden">
-      {filterButtons.map((item, index) => (
+      {filterButtons.map((item: string, index: number) => (
         <p
           key={index}
-          className="flex h-[2.5rem] flex-col items-center justify-center rounded-[.5rem] border-[.0625rem] border-VIprimary-color p-3 font-archivo text-sm font-bold text-VIprimary-color desktop:hover:text-VIsecondary-color"
+          className="flex h-[2.5rem] flex-col items-center justify-center rounded-[.5rem] border-[.0625rem] border-VIprimary-color p-3 font-archivo text-sm font-bold capitalize text-VIprimary-color hover:border-VIsecondary-color desktop:hover:text-VIsecondary-color"
         >
           {item}
         </p>
@@ -38,11 +29,15 @@ const MenuSliderProperties = () => {
             <SelectLabel className="text-VIsecondary-color">
               Selecione uma cidade:
             </SelectLabel>
-            {cities.map((city, index) => (
-              <SelectItem key={index} value={city}>
-                {city}
-              </SelectItem>
-            ))}
+            {cities ? (
+              cities.map((city: string, index: number) => (
+                <SelectItem key={index} value={city}>
+                  {city}
+                </SelectItem>
+              ))
+            ) : (
+              <SelectItem value="Nenhuma">Sem cidade cadastrada</SelectItem>
+            )}
           </SelectGroup>
         </SelectContent>
       </Select>
