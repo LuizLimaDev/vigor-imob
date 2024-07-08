@@ -1,14 +1,11 @@
-import Link from "next/link";
-
 export type TProps = {
-  id: string;
   index: number;
   src: string;
   title: string;
   text: string;
 };
 
-const FeedCard = ({ id, index, src, title, text }: TProps) => {
+const FeedCard = ({ index, src, title, text }: TProps) => {
   return (
     <div className="mb-10 flex flex-col items-center justify-center desktop:flex-row desktop:gap-24">
       <iframe
@@ -28,13 +25,6 @@ const FeedCard = ({ id, index, src, title, text }: TProps) => {
           {title}
         </h3>
         <p className="my-9">{text}</p>
-
-        <Link
-          href={`/properties/${id}`}
-          className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-VIsecondary-color px-4 py-2 text-sm font-medium text-VIprimary-color ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-        >
-          Conhecer
-        </Link>
       </div>
     </div>
   );

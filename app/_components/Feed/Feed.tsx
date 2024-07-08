@@ -22,7 +22,6 @@ const Feed = ({ feed }: TProps) => {
       {feeds.map((feed) => (
         <div key={feed._id}>
           <FeedCard
-            id={feed._id}
             index={feed.index}
             src={feed.video}
             title={feed.title}
