@@ -1,5 +1,4 @@
 import ArrowBack from "@/app/_components/ArrowBack/ArrowBack";
-import Hero from "@/app/_components/Hero/Hero";
 import { Tproperties } from "@/app/types/propertiesType";
 import Image from "next/image";
 import PhotoSlider from "./_components/PhotoSlider/PhotoSlider";
@@ -21,11 +20,15 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
 
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center desktop:justify-center  desktop:pt-0">
-      <Hero
-        src="/Pages/properties/hero.png"
-        alt="imóveis"
-        title="Vídeo"
-        styles="desktop:h-[30rem] zero:hidden desktop:flex"
+      <iframe
+        width="0"
+        height="0"
+        src={`${properties.video}&autoplay=1`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+        className="w-screen desktop:h-[30rem]"
       />
 
       <div className="pl-4 desktop:pl-20">
@@ -77,7 +80,7 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
             className="rounded-[0.5rem]"
-          ></iframe>
+          />
         </div>
 
         <ArrowBack />

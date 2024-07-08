@@ -26,7 +26,6 @@ const Properties = async () => {
   const filterButtons = [
     ...new Set(categories.map((item) => item.toLowerCase())),
   ];
-  console.log(filterButtons);
   const cities = filteredProperties.map((item) => item.city);
 
   return (
