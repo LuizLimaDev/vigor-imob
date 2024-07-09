@@ -1,3 +1,4 @@
+import ContactUs from "@/app/_components/Footer/_components/ContactUs/ContactUs";
 import {
   HoverCard,
   HoverCardContent,
@@ -51,7 +52,7 @@ const UserMenus = () => {
                   height={24}
                   sizes="100vw"
                 />
-                (79) 9 9910-2930
+                <ContactUs text="(79) 9 9910-2930" />
               </li>
               <li className="flex gap-2">
                 <Image

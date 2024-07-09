@@ -22,12 +22,12 @@ import {
   SelectValue,
 } from "@/app/_components/ui/select";
 import { Textarea } from "@/app/_components/ui/textarea";
-import whatsMsg from "@/services/whatsMsg";
+import whatsMsgRegister from "@/services/whatsMsgRegister";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import * as z from "zod";
 
-const propertiesType = ["Casa", "Apartamento", "Comercial", "Rural", "Praia"];
+const propertiesType = ["Casa", "Apartamento", "Comercial", "Loteamento"];
 
 const formSchema = z.object({
   name: z.string().min(3, {
@@ -86,7 +86,7 @@ const RegisterForm = () => {
     const type = values.type;
     const text = values.text;
 
-    const msg = await whatsMsg(
+    const msg = await whatsMsgRegister(
       name,
       phone,
       email,
@@ -98,7 +98,7 @@ const RegisterForm = () => {
       text
     );
 
-    -router.push(msg);
+    router.push(msg);
   }
 
   return (

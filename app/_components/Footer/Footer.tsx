@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import ContactUs from "./ContactUs/ContactUs";
+import ContactUs from "./_components/ContactUs/ContactUs";
+import PropertiesMenus from "./_components/PropertiesMenus/PropertiesMenus";
 
 const Footer = () => {
   return (
@@ -40,7 +41,7 @@ const Footer = () => {
                   <Link href="/about">Sobre nós</Link>
                 </li>
                 <li>
-                  <ContactUs />
+                  <ContactUs text="Fale conosco" />
                 </li>
               </ul>
             </div>
@@ -52,13 +53,7 @@ const Footer = () => {
                 </h5>
               </div>
 
-              <ul className="flex flex-col items-center justify-center font-alegreya desktop:items-start">
-                <li>Todos</li>
-                <li>Novos</li>
-                <li>Usados</li>
-                <li>Loteamento</li>
-                <li>Comercial</li>
-              </ul>
+              <PropertiesMenus />
             </div>
 
             <div className="flex flex-col items-center justify-center text-VIligth-color desktop:items-start desktop:justify-start">
@@ -85,16 +80,29 @@ const Footer = () => {
                     width={24}
                     height={24}
                   />
-                  (79) 9 9910-2930
+                  <ContactUs text="(79) 9 9910-2930" />
                 </li>
                 <li className="flex gap-2">
-                  <Image
-                    src="/Icons/instagram.svg"
-                    alt="email"
-                    width={24}
-                    height={24}
-                  />
-                  @vigor_imob
+                  <Link
+                    href="http://www.instagram.com/vigor_imob"
+                    className="flex"
+                    legacyBehavior
+                  >
+                    <a
+                      className="flex gap-2 hover:cursor-pointer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src="/Icons/instagram.svg"
+                        alt="email"
+                        width={24}
+                        height={24}
+                        sizes="100vw"
+                      />
+                      @vigor_imob
+                    </a>
+                  </Link>
                 </li>
                 <li className="flex gap-2 desktop:hidden">
                   <Image
