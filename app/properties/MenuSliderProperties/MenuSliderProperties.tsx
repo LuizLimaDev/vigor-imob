@@ -28,7 +28,7 @@ const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
       {filterButtons.map((item: string, index: number) => (
         <p
           key={index}
-          className={`${item === filter && "!border-VIprimary-color bg-VIprimary-color !text-VIligth-color"} flex h-[2.5rem] flex-col items-center justify-center rounded-[.5rem] border-[.0625rem] border-VIprimary-color p-3 font-archivo text-sm font-bold capitalize text-VIprimary-color hover:border-VIsecondary-color desktop:hover:text-VIsecondary-color `}
+          className={`${item === filter && "!border-VIprimary-color bg-VIprimary-color !text-VIligth-color"} flex h-[2.5rem] cursor-pointer flex-col items-center justify-center rounded-[.5rem] border-[.0625rem] border-VIprimary-color p-3 font-archivo text-sm font-bold capitalize text-VIprimary-color hover:border-VIsecondary-color desktop:hover:text-VIsecondary-color`}
           onClick={() => handleClick(item)}
         >
           {item}
@@ -53,6 +53,9 @@ const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
             ) : (
               <SelectItem value="Nenhuma">Sem cidade cadastrada</SelectItem>
             )}
+            <SelectItem value="empty" className="text-VIsecondary-color">
+              Limpar filtros
+            </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
