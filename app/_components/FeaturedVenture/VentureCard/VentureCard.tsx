@@ -11,7 +11,7 @@ const VentureCard = ({ title }: TProps) => {
   const params = [title];
   return (
     <div
-      className="flex min-h-[8rem] min-w-[8rem] flex-col items-center justify-center gap-2 rounded-[.5rem] border-[.125rem] border-VIprimary-color"
+      className="flex min-h-[8rem] min-w-[8rem] cursor-pointer flex-col items-center justify-center gap-2 rounded-[.5rem] border-[.125rem] border-VIprimary-color"
       onClick={() => filterProperties(params)}
     >
       <Image
