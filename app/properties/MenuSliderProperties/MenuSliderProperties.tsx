@@ -53,7 +53,7 @@ const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
             ) : (
               <SelectItem value="Nenhuma">Sem cidade cadastrada</SelectItem>
             )}
-            <SelectItem value="empty" className="text-VIsecondary-color">
+            <SelectItem value="all" className="text-VIsecondary-color">
               Limpar filtros
             </SelectItem>
           </SelectGroup>
