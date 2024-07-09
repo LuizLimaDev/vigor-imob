@@ -1,3 +1,8 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/app/_components/ui/dialog";
 import Image from "next/image";
 
 export type TProps = {
@@ -14,15 +19,32 @@ const PhotoSlider = ({ title, photos }: TProps) => {
 
       <div className="mr-3 flex gap-3 overflow-scroll desktop:gap-6 [&::-webkit-scrollbar]:hidden">
         {photos.map((item, id) => (
-          <Image
-            key={id}
-            src={item}
-            alt={title}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="rouded-[.5rem] mb-10 h-[10.312rem] min-w-[12.687rem] gap-3 rounded-md"
-          />
+          <Dialog key={id}>
+            <DialogTrigger asChild>
+              <Image
+                key={id}
+                src={item}
+                alt={title}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="rouded-[.5rem] mb-10 h-[10.312rem] min-w-[12.687rem] cursor-pointer gap-3 rounded-md"
+              />
+            </DialogTrigger>
+            <DialogContent className="flex !h-[80%] min-w-[80%] items-center justify-center rounded-md">
+              <div className="flex h-[90vh] w-[90vw] items-center justify-center">
+                <Image
+                  key={id}
+                  src={item}
+                  alt={title}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="rouded-[.5rem] h-[60%] w-[90%] desktop:h-[80%]"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
         ))}
       </div>
     </div>
