@@ -1,6 +1,6 @@
+import Title from "@/app/_components/Title/Title";
 import { Tproperties } from "@/app/types/propertiesType";
 import { revalidatePath } from "next/cache";
-import Title from "../../_components/Title/Title";
 import PropertieEditCard from "./_components/PropertieEditCard";
 
 const AdminImoveis = async () => {

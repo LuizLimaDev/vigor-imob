@@ -1,9 +1,9 @@
 import { revalidatePath } from "next/cache";
-import FeaturedVenture from "./_components/FeaturedVenture/FeaturedVenture";
-import Feed from "./_components/Feed/Feed";
-import SectionTitleBar from "./_components/SectionTitleBar/SectionTitleBar";
-import VideoPlayer from "./_components/VideoPlayer/VideoPlayer";
-import VideoStory from "./_components/VideoStory/VideoStory";
+import FeaturedVenture from "../_components/FeaturedVenture/FeaturedVenture";
+import Feed from "../_components/Feed/Feed";
+import SectionTitleBar from "../_components/SectionTitleBar/SectionTitleBar";
+import VideoPlayer from "../_components/VideoPlayer/VideoPlayer";
+import VideoStory from "../_components/VideoStory/VideoStory";
 
 export type TFeedProps = {
   feed: [

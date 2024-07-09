@@ -1,6 +1,6 @@
+import Title from "@/app/_components/Title/Title";
 import { TBroker } from "@/app/types/brokersType";
 import { revalidatePath } from "next/cache";
-import Title from "../../_components/Title/Title";
 import BrokerEditCard from "./_components/BrokerEditCard";
 
 const AdminCorretores = async () => {

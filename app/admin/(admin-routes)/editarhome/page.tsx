@@ -1,4 +1,4 @@
-import Title from "../../_components/Title/Title";
+import Title from "@/app/_components/Title/Title";
 import UpdateHomeForm from "./_components/UpdateHomeForm/UpdateHomeForm";
 
 const EditarHome = () => {

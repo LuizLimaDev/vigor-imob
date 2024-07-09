@@ -1,6 +1,6 @@
+import Hero from "@/app/_components/Hero/Hero";
+import { Tproperties } from "@/app/types/propertiesType";
 import { revalidatePath } from "next/cache";
-import Hero from "../_components/Hero/Hero";
-import { Tproperties } from "../types/propertiesType";
 import MenuSliderProperties from "./_components/MenuSliderProperties/MenuSliderProperties";
 import PropertieCard from "./_components/PropertieCard/PropertieCard";
 

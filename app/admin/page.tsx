@@ -11,12 +11,12 @@ import {
 import { Input } from "@/app/_components/ui/input";
 import { useForm } from "react-hook-form";
 
+import Title from "@/app/_components/Title/Title";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import * as z from "zod";
-import Title from "../_components/Title/Title";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -51,6 +51,7 @@ const Admin = () => {
     }
 
     router.replace("admin/imoveis");
+    router.refresh();
   }
 
   return (

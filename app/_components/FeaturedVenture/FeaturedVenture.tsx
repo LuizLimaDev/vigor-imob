@@ -1,4 +1,4 @@
-import Title from "../Title/Title";
+import Title from "@/app/_components/Title/Title";
 import VentureCard from "./VentureCard/VentureCard";
 
 const FeaturedVenture = ({ ventures }: { ventures: string[] }) => {

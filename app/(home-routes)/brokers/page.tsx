@@ -1,4 +1,4 @@
-import Hero from "../_components/Hero/Hero";
+import Hero from "@/app/_components/Hero/Hero";
 import BrokerCard from "./_components/BrokerCard/BrokerCard";
 
 export type Tbrokers = {

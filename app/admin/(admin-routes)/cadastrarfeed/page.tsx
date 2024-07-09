@@ -1,4 +1,4 @@
-import Title from "../../_components/Title/Title";
+import Title from "@/app/_components/Title/Title";
 import RegisterFeedForm from "./_components/RegisterFeedForm/RegisterFeedForm";
 
 const Cadastrarfeed = () => {

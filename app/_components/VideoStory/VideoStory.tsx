@@ -1,4 +1,4 @@
-import Title from "../Title/Title";
+import Title from "@/app/_components/Title/Title";
 
 const VideoStory = ({ stories }: any) => {
   return (

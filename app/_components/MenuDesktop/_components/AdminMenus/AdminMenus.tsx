@@ -1,15 +1,19 @@
+"use client";
+
 import { deleteCookies } from "@/app/actions/deleteCookies";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const AdminMenus = () => {
   const pathname = usePathname();
   const isAdmin = pathname.includes("admin");
+  const router = useRouter();
 
   async function handleLogOut() {
-    await signOut({ callbackUrl: "/", redirect: true });
+    await signOut({ redirect: false });
     deleteCookies();
+    router.replace("/");
   }
 
   return (

@@ -1,6 +1,6 @@
+import Title from "@/app/_components/Title/Title";
 import { TFeed } from "@/app/types/feedsType";
 import { revalidatePath } from "next/cache";
-import Title from "../../_components/Title/Title";
 import FeedsEditCard from "./_components/FeedsEditCard";
 
 const AdminFeeds = async () => {

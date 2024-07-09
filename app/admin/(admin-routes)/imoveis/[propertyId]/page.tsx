@@ -1,4 +1,4 @@
-import Title from "../../../_components/Title/Title";
+import Title from "@/app/_components/Title/Title";
 import RegisterPropertieForm from "./_components/RegisterPropertieForm/RegisterPropertieForm";
 
 const EditarImovel = async ({ params }: { params: { propertyId: string } }) => {
