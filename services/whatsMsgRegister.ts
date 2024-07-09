@@ -1,4 +1,4 @@
-export default async function whatsMsg(
+export default async function whatsMsgRegister(
   name: string,
   phone: string,
   email: string,
