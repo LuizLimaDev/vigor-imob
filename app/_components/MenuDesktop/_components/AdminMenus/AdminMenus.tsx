@@ -1,3 +1,5 @@
+import { deleteCookies } from "@/app/actions/deleteCookies";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -5,11 +7,22 @@ const AdminMenus = () => {
   const pathname = usePathname();
   const isAdmin = pathname.includes("admin");
 
+  async function handleLogOut() {
+    await signOut({ callbackUrl: "/", redirect: true });
+    deleteCookies();
+  }
+
   return (
     <div
       className={`${isAdmin === true ? "flex" : "hidden"} flex w-full justify-between`}
     >
-      <div className="flex w-[80%] justify-between">
+      <div className="flex w-[90%] items-center justify-between text-sm">
+        <Link
+          href="/admin/editarhome"
+          className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("cadastrarcorretor") && "text-VIsecondary-color"}`}
+        >
+          Editar Home
+        </Link>
         <Link
           href="/admin/imoveis"
           className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("imoveis") && "text-VIsecondary-color"}`}
@@ -48,9 +61,9 @@ const AdminMenus = () => {
         </Link>
       </div>
 
-      <Link href="/" className="text-red-600">
+      <button className="text-red-600" onClick={() => handleLogOut()}>
         Sair
-      </Link>
+      </button>
     </div>
   );
 };
