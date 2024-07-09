@@ -3,7 +3,6 @@ import { Alegreya, Archivo, Poppins } from "next/font/google";
 import Footer from "./_components/Footer/Footer";
 import MenuDesktop from "./_components/MenuDesktop/MenuDesktop";
 import MenuMobile from "./_components/MenuMobile/MenuMobile";
-import PropertiesFilterProvider from "./context/propertiesFilterContext";
 import "./globals.css";
 import NextAtuhSessionProvider from "./providers/sessionProvider";
 
@@ -34,12 +33,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <NextAtuhSessionProvider>
-          <PropertiesFilterProvider>
-            <MenuMobile />
-            <MenuDesktop />
-            {children}
-            <Footer />
-          </PropertiesFilterProvider>
+          <MenuMobile />
+          <MenuDesktop />
+          {children}
+          <Footer />
         </NextAtuhSessionProvider>
       </body>
     </html>
