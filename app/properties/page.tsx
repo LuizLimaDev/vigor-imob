@@ -1,8 +1,8 @@
 import { revalidatePath } from "next/cache";
 import Hero from "../_components/Hero/Hero";
 import { Tproperties } from "../types/propertiesType";
-import MenuSliderProperties from "./MenuSliderProperties/MenuSliderProperties";
-import PropertieCard from "./PropertieCard/PropertieCard";
+import MenuSliderProperties from "./_components/MenuSliderProperties/MenuSliderProperties";
+import PropertieCard from "./_components/PropertieCard/PropertieCard";
 
 type TsearchParams = {
   [key: string]: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { filterProperties } from "@/app/action/actions";
+import { filterProperties } from "@/app/actions/actions";
 
 const PropertiesMenus = () => {
   return (

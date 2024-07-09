@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/_components/ui/select";
-import { filterProperties, filterPropertiesCity } from "@/app/action/actions";
+import { filterProperties, filterPropertiesCity } from "@/app/actions/actions";
 
 const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
   const filter = searchParams.split("=")[1];
