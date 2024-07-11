@@ -48,6 +48,9 @@ export const formSchema = z.object({
       message: "A garagem deve conter no mínimo 1 número.",
     }),
 
+  allotment: z.string().min(3, {
+    message: "O loteamento deve conter no mínimo 3 caracteres.",
+  }),
   description: z
     .string()
     .min(10, { message: "Escreva pelo menos 10 caracteres." })

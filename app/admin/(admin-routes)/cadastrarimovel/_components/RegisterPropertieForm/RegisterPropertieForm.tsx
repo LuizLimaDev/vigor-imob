@@ -35,6 +35,7 @@ type ValuesType = {
   rent: string;
   taxe: string;
   image?: any;
+  allotment?: any;
 };
 
 const RegisterPropertieForm = () => {
@@ -58,6 +59,7 @@ const RegisterPropertieForm = () => {
       price: "",
       rent: "",
       taxe: "",
+      allotment: "",
     },
   });
 
@@ -112,7 +114,7 @@ const RegisterPropertieForm = () => {
                     Nome
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Nome e Sobrenome" {...field} />
+                    <Input placeholder="Nome do imóvel" {...field} />
                   </FormControl>
                   <FormMessage className="mt-1 desktop:ml-[3px]" />
                 </FormItem>
@@ -166,7 +168,7 @@ const RegisterPropertieForm = () => {
               />
 
               <FormLabel className="mt-5 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                Título
+                Título de apresentação
               </FormLabel>
               <FormField
                 control={form.control}
@@ -294,6 +296,27 @@ const RegisterPropertieForm = () => {
           <div className="flex h-auto w-[21.375rem] flex-col gap-4">
             <div>
               <FormLabel className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                Loteamento
+              </FormLabel>
+              <FormField
+                control={form.control}
+                name="allotment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Loteamento"
+                        type="text"
+                        {...field}
+                        className="mb-4"
+                      />
+                    </FormControl>
+                    <FormMessage className=" mt-1 desktop:ml-[3px]" />
+                  </FormItem>
+                )}
+              />
+
+              <FormLabel className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 Descrição
               </FormLabel>
               <FormField
@@ -305,7 +328,7 @@ const RegisterPropertieForm = () => {
                       <Textarea
                         placeholder="Deixe sua mensagem aqui."
                         {...field}
-                        className="h-[7.625rem]"
+                        className="h-[5.3rem]"
                       />
                     </FormControl>
                     <FormMessage className="mt-1 desktop:ml-[3px]" />

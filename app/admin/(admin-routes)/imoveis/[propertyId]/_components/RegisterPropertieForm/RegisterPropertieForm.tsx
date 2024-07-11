@@ -34,6 +34,7 @@ type ValuesType = {
   rent: string;
   taxe: string;
   image?: any;
+  allotment?: string;
 };
 
 const RegisterPropertieForm = ({ property }: any) => {
@@ -50,6 +51,7 @@ const RegisterPropertieForm = ({ property }: any) => {
       rooms: "",
       bathrooms: "",
       garage: "",
+      allotment: "",
       description: "",
       price: "",
       rent: "",
@@ -281,6 +283,27 @@ const RegisterPropertieForm = ({ property }: any) => {
           <div className="flex h-auto w-[21.375rem] flex-col gap-4">
             <div>
               <FormLabel className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                Loteamento
+              </FormLabel>
+              <FormField
+                control={form.control}
+                name="allotment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Loteamento"
+                        type="text"
+                        {...field}
+                        className="mb-4"
+                      />
+                    </FormControl>
+                    <FormMessage className=" mt-1 desktop:ml-[3px]" />
+                  </FormItem>
+                )}
+              />
+
+              <FormLabel className="mb-1 font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 Descrição
               </FormLabel>
               <FormField
@@ -292,7 +315,7 @@ const RegisterPropertieForm = ({ property }: any) => {
                       <Textarea
                         placeholder="Deixe sua mensagem aqui."
                         {...field}
-                        className="h-[7.625rem]"
+                        className="h-[5.3rem]"
                       />
                     </FormControl>
                     <FormMessage className="mt-1 desktop:ml-[3px]" />
@@ -310,20 +333,19 @@ const RegisterPropertieForm = ({ property }: any) => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Compra" type="text" {...field} />
+                        <Input placeholder="Compra" type="number" {...field} />
                       </FormControl>
                       <FormMessage className="mt-1 desktop:ml-[3px]" />
                     </FormItem>
                   )}
                 />
-
                 <FormField
                   control={form.control}
                   name="rent"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Aluguel" type="text" {...field} />
+                        <Input placeholder="Aluguel" type="number" {...field} />
                       </FormControl>
                       <FormMessage className="mt-1 desktop:ml-[3px]" />
                     </FormItem>
@@ -337,7 +359,7 @@ const RegisterPropertieForm = ({ property }: any) => {
                       <FormControl>
                         <Input
                           placeholder="Condomínio"
-                          type="text"
+                          type="number"
                           {...field}
                         />
                       </FormControl>

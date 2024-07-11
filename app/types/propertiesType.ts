@@ -15,6 +15,7 @@ export type Tproperties = {
   taxe: string;
   city: string;
   state: string;
+  allotment?: string;
 };
 
 export type TpropertiesPost = {
@@ -33,4 +34,5 @@ export type TpropertiesPost = {
   taxe?: string;
   city?: string;
   state?: string;
+  allotment?: string;
 };

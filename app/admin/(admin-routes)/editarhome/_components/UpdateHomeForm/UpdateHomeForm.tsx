@@ -4,38 +4,75 @@ import { Button } from "@/app/_components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/app/_components/ui/form";
-import { Input } from "@/app/_components/ui/input";
 import { useForm } from "react-hook-form";
 
-import { Textarea } from "@/app/_components/ui/textarea";
+import { Checkbox } from "@/app/_components/ui/checkbox";
+import { Input } from "@/app/_components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import * as z from "zod";
 
 const formSchema = z.object({
-  highlights: z.string().min(3, {
-    message: "O empreendimento deve conter no mínimo 3 caracteres.",
-  }),
-  story: z.string().min(10, { message: "Insira ao menos um link." }),
+  highlights: z.array(z.string()),
+  link0: z.string(),
+  link1: z.string(),
+  link2: z.string(),
+  link3: z.string(),
+  link4: z.string(),
+  link5: z.string(),
+  link6: z.string(),
 });
 
-const UpdateHomeForm = () => {
+// TODO - trazer os valores preenchidos caso já tenha
+
+const UpdateHomeForm = ({
+  allotments,
+  homeData,
+}: {
+  allotments: string[];
+  homeData: string[];
+}) => {
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      highlights: "",
-      story: "",
+      highlights: ["Em breve..."],
+      link0: homeData[0] || "",
+      link1: homeData[1] || "",
+      link2: homeData[2] || "",
+      link3: homeData[3] || "",
+      link4: homeData[4] || "",
+      link5: homeData[5] || "",
+      link6: homeData[6] || "",
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    let values = data;
+
+    data.highlights.length > 1 && data.highlights.shift();
+
+    const storiesLinks = [];
+    storiesLinks.push(data.link0);
+    storiesLinks.push(data.link1);
+    storiesLinks.push(data.link2);
+    storiesLinks.push(data.link3);
+    storiesLinks.push(data.link4);
+    storiesLinks.push(data.link5);
+    storiesLinks.push(data.link6);
+
+    const homeData = {
+      highlights: [...values.highlights],
+      story: storiesLinks,
+    };
+
+    console.log(homeData);
+
     const res = await fetch(
       "https://king-prawn-app-vxkkv.ondigitalocean.app/api/home/66297d837dd0a66843b1091b",
       {
@@ -43,7 +80,7 @@ const UpdateHomeForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(homeData),
       }
     );
 
@@ -60,31 +97,47 @@ const UpdateHomeForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className=" flex w-full flex-col justify-start gap-2 px-6 desktop:w-full desktop:items-center"
+        className=" flex w-full flex-col items-center justify-start gap-2 px-6"
       >
-        <div className="z-50 desktop:flex desktop:flex-row desktop:gap-10">
-          <div className="desktop:flex desktop:w-[21.375rem] desktop:flex-col desktop:gap-14">
-            <FormField
-              control={form.control}
-              name="highlights"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="font-archivo text-sm text-VIprimary-color">
-                    Empreendimentos
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="comercial, verão, outono, inverno, primavera"
-                      {...field}
-                    />
-                  </FormControl>
-                  <p className="mt-1 text-xs font-bold text-red-500">
-                    Limitado a 10 nomes.
-                  </p>
-                  <FormMessage className="absolute mt-1 desktop:ml-[3px]" />
-                </FormItem>
-              )}
-            />
+        <div className="z-50 flex flex-row gap-10">
+          <div className="mt-2 flex w-[21.375rem] flex-col gap-1">
+            <FormLabel className="font-archivo text-sm font-medium leading-none text-VIprimary-color peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Loteamentos
+            </FormLabel>
+            <FormDescription className="mb-2">
+              Escolha apenas 7 empreendimento para destacar.
+            </FormDescription>
+            {allotments.map((item, index) => (
+              <FormField
+                key={String(index)}
+                control={form.control}
+                name="highlights"
+                render={({ field }) => {
+                  return (
+                    <FormItem
+                      key={String(index)}
+                      className="flex flex-row items-end"
+                    >
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes(item)}
+                          onCheckedChange={(checked) => {
+                            return checked
+                              ? field.onChange([...field.value, item])
+                              : field.onChange(
+                                  field.value?.filter((value) => value !== item)
+                                );
+                          }}
+                        />
+                      </FormControl>
+                      <FormLabel className="ml-2 mt-1 cursor-pointer font-archivo text-VIprimary-color">
+                        {item}
+                      </FormLabel>
+                    </FormItem>
+                  );
+                }}
+              />
+            ))}
           </div>
 
           <div className="flex h-auto w-[21.375rem] flex-col gap-4">
@@ -94,20 +147,106 @@ const UpdateHomeForm = () => {
               </FormLabel>
               <FormField
                 control={form.control}
-                name="story"
+                name="link0"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Textarea
-                        placeholder="link01, link02, link03..."
+                      <Input
+                        className="mb-2 mt-2"
+                        placeholder="Link embed do youtube"
                         {...field}
-                        className="h-[10rem]"
                       />
                     </FormControl>
-                    <p className="mt-1 text-xs font-bold text-red-500">
-                      Limitado a 7 links.
-                    </p>
-                    <FormMessage className="absolute mt-1 desktop:ml-[3px]" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="link1"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="mb-2"
+                        placeholder="Link embed do youtube"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="link2"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="mb-2"
+                        placeholder="Link embed do youtube"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="link3"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="mb-2"
+                        placeholder="Link embed do youtube"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="link4"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="mb-2"
+                        placeholder="Link embed do youtube"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="link5"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="mb-2"
+                        placeholder="Link embed do youtube"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="link6"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="mb-2"
+                        placeholder="Link embed do youtube"
+                        {...field}
+                      />
+                    </FormControl>
                   </FormItem>
                 )}
               />

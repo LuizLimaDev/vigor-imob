@@ -20,16 +20,27 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
 
   return (
     <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center desktop:justify-center  desktop:pt-0">
-      <iframe
-        width="0"
-        height="0"
-        src={`${properties.video}&autoplay=1&mute=1`}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-        className="w-screen desktop:h-[30rem]"
-      />
+      {properties.video ? (
+        <iframe
+          width="0"
+          height="0"
+          src={`${properties.video}&autoplay=1&mute=1`}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="w-screen desktop:h-[30rem]"
+        />
+      ) : (
+        <Image
+          src={properties.image[0]}
+          alt="Imagem do imóvel"
+          width={0}
+          height={0}
+          sizes="100w"
+          className="w-screen object-cover desktop:h-[30rem]"
+        />
+      )}
 
       <div className="pl-4 desktop:pl-20">
         <PhotoSlider title={properties.name} photos={properties.image} />
@@ -71,16 +82,18 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
             </div>
           </div>
 
-          <iframe
-            width="0"
-            height="491"
-            src={properties.video}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="mb-20 w-[95%] rounded-[0.5rem] desktop:w-[577px]"
-          />
+          {properties.video && (
+            <iframe
+              width="0"
+              height="491"
+              src={properties.video}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="mb-20 w-[95%] rounded-[0.5rem] desktop:w-[577px]"
+            />
+          )}
         </div>
 
         <ArrowBack />

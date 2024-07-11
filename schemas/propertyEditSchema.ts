@@ -12,6 +12,7 @@ export const formSchema = z.object({
   bathrooms: z.string(),
   garage: z.string(),
 
+  allotment: z.string(),
   description: z
     .string()
     .max(200, { message: "O texto não pode ter mais de 200 caracteres" }),
