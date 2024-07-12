@@ -18,11 +18,6 @@ const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
   const router = useRouter();
 
   function handleClick(item: string) {
-    if (filter === item) {
-      filterProperties([""]);
-      return;
-    }
-
     filterProperties([item]);
   }
 
@@ -33,6 +28,7 @@ const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
           Limpar filtro
         </Button>
       ) : null}
+
       {filterButtons.map((item: string, index: number) => (
         <p
           key={index}
@@ -61,9 +57,6 @@ const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
             ) : (
               <SelectItem value="Nenhuma">Sem cidade cadastrada</SelectItem>
             )}
-            <SelectItem value="all" className="text-VIsecondary-color">
-              Limpar filtros
-            </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
