@@ -107,7 +107,7 @@ const UpdateHomeForm = ({
               Loteamentos
             </FormLabel>
             <FormDescription className="mb-2">
-              Escolha apenas 7 empreendimento para destacar.
+              Escolha apenas 10 empreendimento para destacar.
             </FormDescription>
             {allotments.map((item, index) => (
               <FormField
