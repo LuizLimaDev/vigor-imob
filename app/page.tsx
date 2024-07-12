@@ -22,7 +22,7 @@ const Home = async () => {
   async function getFeed() {
     const res = await fetch(
       "https://king-prawn-app-vxkkv.ondigitalocean.app/api/feed?page=1",
-      { next: { revalidate: 10 } }
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {
@@ -37,7 +37,8 @@ const Home = async () => {
 
   async function getAllHome() {
     const res = await fetch(
-      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/home"
+      "https://king-prawn-app-vxkkv.ondigitalocean.app/api/home",
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {

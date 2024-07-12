@@ -1,4 +1,5 @@
 import Title from "@/app/_components/Title/Title";
+import { revalidatePath } from "next/cache";
 import UpdateHomeForm from "./_components/UpdateHomeForm/UpdateHomeForm";
 
 const EditarHome = async () => {
@@ -6,7 +7,7 @@ const EditarHome = async () => {
     "use server";
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property`,
-      { next: { revalidate: 10 } }
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {
@@ -18,6 +19,8 @@ const EditarHome = async () => {
       (property: { allotment: string }) => property.allotment
     );
 
+    revalidatePath("/admin/editarhome");
+
     return allotments;
   }
 
@@ -25,7 +28,7 @@ const EditarHome = async () => {
     "use server";
     const res = await fetch(
       `https://king-prawn-app-vxkkv.ondigitalocean.app/api/home`,
-      { next: { revalidate: 10 } }
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {
@@ -33,12 +36,15 @@ const EditarHome = async () => {
     }
 
     const data = await res.json();
-    const homeData = data[0].story;
+    const homeData = data[0];
+
+    revalidatePath("/admin/editarhome");
 
     return homeData;
   }
   const allotments = await getAllotments();
   const homeData = await getHomeData();
+  console.log(homeData);
 
   return (
     <main className="flex w-screen flex-col items-center justify-center ">

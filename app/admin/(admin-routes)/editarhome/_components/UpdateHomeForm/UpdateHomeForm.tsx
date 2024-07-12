@@ -28,50 +28,50 @@ const formSchema = z.object({
   link6: z.string(),
 });
 
-// TODO - trazer os valores preenchidos caso já tenha
-
 const UpdateHomeForm = ({
   allotments,
   homeData,
 }: {
   allotments: string[];
-  homeData: string[];
+  homeData: {
+    _id: string;
+    heroVideo: string;
+    highlights: string[];
+    story: string[];
+  };
 }) => {
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      highlights: ["Em breve..."],
-      link0: homeData[0] || "",
-      link1: homeData[1] || "",
-      link2: homeData[2] || "",
-      link3: homeData[3] || "",
-      link4: homeData[4] || "",
-      link5: homeData[5] || "",
-      link6: homeData[6] || "",
+      highlights: homeData.highlights || ["Em breve..."],
+      link0: homeData.story[0] || "",
+      link1: homeData.story[1] || "",
+      link2: homeData.story[2] || "",
+      link3: homeData.story[3] || "",
+      link4: homeData.story[4] || "",
+      link5: homeData.story[5] || "",
+      link6: homeData.story[6] || "",
     },
   });
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
     let values = data;
 
-    data.highlights.length > 1 && data.highlights.shift();
+    data.highlights.length === 0 && data.highlights.shift();
 
-    const storiesLinks = [];
-    storiesLinks.push(data.link0);
-    storiesLinks.push(data.link1);
-    storiesLinks.push(data.link2);
-    storiesLinks.push(data.link3);
-    storiesLinks.push(data.link4);
-    storiesLinks.push(data.link5);
-    storiesLinks.push(data.link6);
-
-    const homeData = {
-      highlights: [...values.highlights],
-      story: storiesLinks,
+    const newHomeData = {
+      highlights: values.highlights,
+      story: [
+        values.link0,
+        values.link1,
+        values.link2,
+        values.link3,
+        values.link4,
+        values.link5,
+        values.link6,
+      ],
     };
-
-    console.log(homeData);
 
     const res = await fetch(
       "https://king-prawn-app-vxkkv.ondigitalocean.app/api/home/66297d837dd0a66843b1091b",
@@ -80,7 +80,7 @@ const UpdateHomeForm = ({
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(homeData),
+        body: JSON.stringify(newHomeData),
       }
     );
 
@@ -88,6 +88,8 @@ const UpdateHomeForm = ({
       console.log(res.text);
       throw new Error("Falha na comunicação com a API");
     }
+
+    console.log(res);
 
     router.push("/admin/imoveis");
     router.refresh();

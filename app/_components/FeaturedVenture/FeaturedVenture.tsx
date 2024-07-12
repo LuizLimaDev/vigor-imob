@@ -15,12 +15,16 @@ const FeaturedVenture = ({ ventures }: { ventures: string[] }) => {
 
         <div
           className=" 
-          flex gap-[2.125rem] overflow-hidden overflow-x-scroll pr-10 desktop:justify-center   desktop:pl-20 [&::-webkit-scrollbar]:hidden
+          flex gap-[2.125rem] overflow-hidden overflow-x-scroll pr-10 desktop:justify-center   desktop:pl-10 [&::-webkit-scrollbar]:hidden
           "
         >
-          {FeaturedVentureDb.map((venture: string, index: number) => (
-            <VentureCard key={index} title={venture} />
-          ))}
+          {FeaturedVentureDb.length === 0 ? (
+            <VentureCard title="Em breve..." />
+          ) : (
+            FeaturedVentureDb.map((venture: string, index: number) => (
+              <VentureCard key={index} title={venture} />
+            ))
+          )}
         </div>
       </div>
     </div>
