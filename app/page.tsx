@@ -55,7 +55,6 @@ const Home = async () => {
 
       <FeaturedVenture ventures={homeData[0].highlights} />
 
-      {/* fazer condicional para exibir imoveis story */}
       <VideoStory stories={homeData[0].story} />
 
       <div>

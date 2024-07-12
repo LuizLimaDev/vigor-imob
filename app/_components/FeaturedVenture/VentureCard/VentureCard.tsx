@@ -1,6 +1,6 @@
 "use client";
 
-import { filterProperties } from "@/app/actions/actions";
+import { filterPropertiesAllotment } from "@/app/actions/actions";
 import Image from "next/image";
 
 export type TProps = {
@@ -8,11 +8,11 @@ export type TProps = {
 };
 
 const VentureCard = ({ title }: TProps) => {
-  const params = [title];
+  const params = title;
   return (
     <div
       className="flex min-h-[8rem] min-w-[8rem] cursor-pointer flex-col items-center justify-center gap-2 rounded-[.5rem] border-[.125rem] border-VIprimary-color"
-      onClick={() => filterProperties(params)}
+      onClick={() => filterPropertiesAllotment(params)}
     >
       <Image
         src="/Icons/house.svg"
