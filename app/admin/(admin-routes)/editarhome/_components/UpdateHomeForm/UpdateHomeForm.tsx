@@ -58,7 +58,12 @@ const UpdateHomeForm = ({
   async function onSubmit(data: z.infer<typeof formSchema>) {
     let values = data;
 
-    data.highlights.length === 0 && data.highlights.shift();
+    if (
+      values.highlights[0] === "Em breve..." &&
+      values.highlights.length > 1
+    ) {
+      values.highlights.shift();
+    }
 
     const newHomeData = {
       highlights: values.highlights,
@@ -72,6 +77,8 @@ const UpdateHomeForm = ({
         values.link6,
       ],
     };
+
+    console.log(newHomeData);
 
     const res = await fetch(
       "https://king-prawn-app-vxkkv.ondigitalocean.app/api/home/66297d837dd0a66843b1091b",

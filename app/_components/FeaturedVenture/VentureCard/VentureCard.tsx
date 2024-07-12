@@ -9,10 +9,18 @@ export type TProps = {
 
 const VentureCard = ({ title }: TProps) => {
   const params = title;
+
+  function handleClick() {
+    if (params === "Em breve...") {
+      return;
+    }
+    filterPropertiesAllotment(params);
+  }
+
   return (
     <div
       className="flex min-h-[8rem] min-w-[8rem] cursor-pointer flex-col items-center justify-center gap-2 rounded-[.5rem] border-[.125rem] border-VIprimary-color"
-      onClick={() => filterPropertiesAllotment(params)}
+      onClick={() => handleClick()}
     >
       <Image
         src="/Icons/house.svg"

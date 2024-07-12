@@ -36,6 +36,7 @@ const Properties = async ({
     return data;
   }
   const filteredProperties: Tproperties[] = await getProperties();
+  console.log(filteredProperties);
   const categories = filteredProperties
     .map((item) => item.category.slice(1))
     .flat();

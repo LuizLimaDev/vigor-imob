@@ -28,9 +28,9 @@ export const filterPropertiesCity = async (data: string) => {
 
 export const filterPropertiesAllotment = async (data: string) => {
   if (data) {
-    const params = new URLSearchParams([["city", data]]);
+    const params = new URLSearchParams([["allotment", data]]);
 
-    redirect(`/properties?city=${params}`);
+    redirect(`/properties?allotment=${params}`);
   }
 
   redirect(`/properties}`);
