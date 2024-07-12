@@ -44,7 +44,6 @@ const EditarHome = async () => {
   }
   const allotments = await getAllotments();
   const homeData = await getHomeData();
-  console.log(homeData);
 
   return (
     <main className="flex w-screen flex-col items-center justify-center ">
