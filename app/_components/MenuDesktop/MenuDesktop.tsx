@@ -16,8 +16,8 @@ const MenuDesktop = () => {
         <Image
           src="/logo.svg"
           alt="logo imobiliária vigor"
-          width={66}
-          height={30}
+          width={78}
+          height={42}
           className="drop-shadow-VI-1"
         />
       </Link>

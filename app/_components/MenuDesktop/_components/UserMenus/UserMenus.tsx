@@ -18,28 +18,30 @@ const UserMenus = () => {
     >
       <Link
         href="/"
-        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname === "/" && "text-VIsecondary-color"}`}
+        className={`text-[1.125rem] hover:border-b-2 hover:border-b-VIsecondary-color ${pathname === "/" && "text-VIsecondary-color"}`}
       >
         Home
       </Link>
 
       <Link
         href="/about"
-        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("about") && "text-VIsecondary-color"}`}
+        className={`text-[1.125rem] hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("about") && "text-VIsecondary-color"}`}
       >
         Sobre nós
       </Link>
 
       <Link
         href="/register"
-        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("register") && "text-VIsecondary-color"}`}
+        className={`text-[1.125rem] hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("register") && "text-VIsecondary-color"}`}
       >
         Cadastre imóveis
       </Link>
 
       <HoverCard openDelay={0}>
         <HoverCardTrigger asChild>
-          <p className="hover:text-VIsecondary-color">Contato</p>
+          <p className="text-[1.125rem] hover:text-VIsecondary-color">
+            Contato
+          </p>
         </HoverCardTrigger>
         <HoverCardContent>
           <div>
@@ -93,14 +95,14 @@ const UserMenus = () => {
 
       <Link
         href="/brokers"
-        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("brokers") && "text-VIsecondary-color"}`}
+        className={`text-[1.125rem] hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("brokers") && "text-VIsecondary-color"}`}
       >
         Corretores
       </Link>
 
       <Link
         href="/properties"
-        className={`hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("properties") && "text-VIsecondary-color"}`}
+        className={`text-[1.125rem] hover:border-b-2 hover:border-b-VIsecondary-color ${pathname.includes("properties") && "text-VIsecondary-color"}`}
       >
         Todos imóveis
       </Link>
