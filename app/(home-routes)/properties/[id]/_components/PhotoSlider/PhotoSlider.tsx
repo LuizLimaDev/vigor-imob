@@ -1,6 +1,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
   DialogTrigger,
 } from "@/app/_components/ui/dialog";
 import Image from "next/image";
@@ -32,6 +33,8 @@ const PhotoSlider = ({ title, photos }: TProps) => {
               />
             </DialogTrigger>
             <DialogContent className="flex !h-[80%] min-w-[80%] items-center justify-center rounded-md">
+              <DialogTitle className="hidden">Foto tela cheia</DialogTitle>
+
               <div className="flex h-[90vh] w-[90vw] items-center justify-center">
                 <Image
                   key={id}

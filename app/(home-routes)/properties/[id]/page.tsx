@@ -7,7 +7,8 @@ import PropertieInfo from "./_components/PropertieInfo/PropertieInfo";
 const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
   async function getProperties() {
     const res = await fetch(
-      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/${params.id}`
+      `https://king-prawn-app-vxkkv.ondigitalocean.app/api/property/${params.id}`,
+      { cache: "no-cache" }
     );
 
     if (!res.ok) {
@@ -19,12 +20,12 @@ const PropertiesDetail = async ({ params }: { params: { id: string } }) => {
   const properties: Tproperties = await getProperties();
 
   return (
-    <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center desktop:justify-center  desktop:pt-0">
-      {properties.video ? (
+    <main className="relative w-screen py-16 desktop:flex desktop:flex-col desktop:items-center  desktop:justify-center desktop:pt-[5rem]">
+      {properties.heroVideo ? (
         <iframe
           width="0"
           height="0"
-          src={`${properties.video}&autoplay=1&mute=1`}
+          src={`${properties.heroVideo}&autoplay=1&mute=1`}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"

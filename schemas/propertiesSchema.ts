@@ -17,6 +17,7 @@ export const formSchema = z.object({
     message: "O título deve conter no mínimo 3 caracteres.",
   }),
 
+  heroVideo: z.string(),
   image: z.any(),
   video: z.string(),
   area: z

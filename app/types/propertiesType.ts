@@ -10,6 +10,7 @@ export type Tproperties = {
   description: string;
   price: string;
   rent: string;
+  heroVideo?: string;
   image: string[];
   video: string;
   taxe: string;

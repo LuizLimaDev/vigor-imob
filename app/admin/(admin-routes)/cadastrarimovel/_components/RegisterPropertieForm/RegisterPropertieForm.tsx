@@ -25,6 +25,8 @@ type ValuesType = {
   city: string;
   state: string;
   title: string;
+  heroVideo: string;
+  image?: any;
   video: string;
   area: string;
   rooms: string;
@@ -34,7 +36,6 @@ type ValuesType = {
   price: string;
   rent: string;
   taxe: string;
-  image?: any;
   allotment?: any;
 };
 
@@ -49,6 +50,7 @@ const RegisterPropertieForm = () => {
       city: "",
       state: "",
       title: "",
+      heroVideo: "",
       video: "",
       area: "",
       rooms: "",
@@ -191,11 +193,28 @@ const RegisterPropertieForm = () => {
             </FormLabel>
             <FormField
               control={form.control}
+              name="heroVideo"
+              render={({ field }) => (
+                <FormItem className="mb-1 flex flex-col">
+                  <div className="flex items-center gap-2">
+                    <FormLabel className="w-11 text-VIprimary-color">
+                      Hero
+                    </FormLabel>
+                    <FormControl>
+                      <Input placeholder="Link youtube embed" {...field} />
+                    </FormControl>
+                  </div>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="image"
               render={() => (
                 <FormItem className="flex flex-col">
                   <div className="flex items-center gap-2">
-                    <FormLabel className="text-VIprimary-color">
+                    <FormLabel className="w-11 text-VIprimary-color">
                       Fotos
                     </FormLabel>
                     <FormControl>
@@ -223,9 +242,9 @@ const RegisterPropertieForm = () => {
               control={form.control}
               name="video"
               render={({ field }) => (
-                <FormItem className="mt-10 flex flex-col">
+                <FormItem className="mt-1 flex flex-col">
                   <div className="flex items-center gap-2">
-                    <FormLabel className="text-VIprimary-color">
+                    <FormLabel className="w-11 text-VIprimary-color">
                       Vídeo
                     </FormLabel>
                     <FormControl>

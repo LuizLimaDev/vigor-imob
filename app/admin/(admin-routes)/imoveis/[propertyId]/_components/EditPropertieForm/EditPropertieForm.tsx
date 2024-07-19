@@ -24,6 +24,8 @@ type ValuesType = {
   city: string;
   state: string;
   title: string;
+  heroVideo: string;
+  image?: any;
   video?: string;
   area: string;
   rooms: string;
@@ -33,11 +35,10 @@ type ValuesType = {
   price: string;
   rent: string;
   taxe: string;
-  image?: any;
   allotment?: string;
 };
 
-const RegisterPropertieForm = ({ property }: any) => {
+const EditPropertieForm = ({ property }: any) => {
   const [files, setFiles] = useState<FileList | null>();
   const router = useRouter();
   const values = property;
@@ -47,6 +48,9 @@ const RegisterPropertieForm = ({ property }: any) => {
       category: "",
       city: "",
       state: "",
+      title: "",
+      heroVideo: "",
+      video: "",
       area: "",
       rooms: "",
       bathrooms: "",
@@ -56,7 +60,6 @@ const RegisterPropertieForm = ({ property }: any) => {
       price: "",
       rent: "",
       taxe: "",
-      title: "",
     },
     values,
   });
@@ -183,11 +186,28 @@ const RegisterPropertieForm = ({ property }: any) => {
             </FormLabel>
             <FormField
               control={form.control}
+              name="heroVideo"
+              render={({ field }) => (
+                <FormItem className="mt-1 flex flex-col">
+                  <div className="flex items-center gap-2">
+                    <FormLabel className="w-11 text-VIprimary-color">
+                      Hero
+                    </FormLabel>
+                    <FormControl>
+                      <Input placeholder="Link youtube embed" {...field} />
+                    </FormControl>
+                  </div>
+                  <FormMessage className="mt-1 desktop:ml-[3px]" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="image"
               render={() => (
                 <FormItem className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <FormLabel className="text-VIprimary-color">
+                  <div className="mt-1 flex items-center gap-2">
+                    <FormLabel className="w-11 text-VIprimary-color">
                       Fotos
                     </FormLabel>
                     <FormControl>
@@ -210,9 +230,9 @@ const RegisterPropertieForm = ({ property }: any) => {
               control={form.control}
               name="video"
               render={({ field }) => (
-                <FormItem className="mt-10 flex flex-col">
+                <FormItem className="mt-1 flex flex-col">
                   <div className="flex items-center gap-2">
-                    <FormLabel className="text-VIprimary-color">
+                    <FormLabel className="w-11 text-VIprimary-color">
                       Vídeo
                     </FormLabel>
                     <FormControl>
@@ -380,4 +400,4 @@ const RegisterPropertieForm = ({ property }: any) => {
   );
 };
 
-export default RegisterPropertieForm;
+export default EditPropertieForm;

@@ -1,5 +1,5 @@
 import Title from "@/app/_components/Title/Title";
-import RegisterPropertieForm from "./_components/RegisterPropertieForm/RegisterPropertieForm";
+import EditPropertieForm from "./_components/EditPropertieForm/EditPropertieForm";
 
 const EditarImovel = async ({ params }: { params: { propertyId: string } }) => {
   async function getProperties() {
@@ -26,7 +26,7 @@ const EditarImovel = async ({ params }: { params: { propertyId: string } }) => {
       </div>
 
       <div className="mx-2 my-10 w-[98%] rounded-[.5rem] bg-[#F7FAFE] py-4">
-        <RegisterPropertieForm property={property} />
+        <EditPropertieForm property={property} />
       </div>
     </main>
   );
