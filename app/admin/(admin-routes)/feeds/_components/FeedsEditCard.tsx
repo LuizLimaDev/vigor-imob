@@ -62,6 +62,8 @@ const FeedsEditCard = ({ id, video, title }: TProps) => {
             />
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px] rounded-md">
+            <DialogTitle className="hidden">Deletar propriedade?</DialogTitle>
+
             <DialogHeader>
               <DialogTitle>Deletar propriedade</DialogTitle>
               <DialogDescription>
