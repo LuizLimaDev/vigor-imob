@@ -7,10 +7,11 @@ export default function About() {
     <main className="flex w-screen flex-col items-center justify-center bg-VIligth-color px-4 pt-16 desktop:justify-center desktop:px-24">
       <div className="flex flex-col items-center justify-center desktop:mt-16  desktop:flex-row-reverse">
         <Image
-          src="/Pages/about/01.png"
+          src="/Pages/about/01.jpg"
           alt="Sobre imobiliária vigor"
           width={358}
           height={263}
+          className="rounded-md"
         />
         <div className="desktop:items-start desktop:justify-between">
           <h1 className="mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
