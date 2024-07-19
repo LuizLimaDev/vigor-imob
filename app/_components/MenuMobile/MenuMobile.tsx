@@ -2,6 +2,9 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/app/_components/ui/sheet";
 import Image from "next/image";
@@ -34,6 +37,10 @@ const MenuMobile = () => {
         </SheetTrigger>
 
         <SheetContent>
+          <SheetHeader className="hidden">
+            <SheetTitle>Menu</SheetTitle>
+            <SheetDescription>Menu mobile</SheetDescription>
+          </SheetHeader>
           <div className="pt1- flex h-full w-full -translate-x-[.3%] flex-col justify-between">
             <div className="flex h-[4.85rem] w-[100.3%] items-center justify-center bg-VIsecondary-color">
               <Image
