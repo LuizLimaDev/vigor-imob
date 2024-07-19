@@ -10,7 +10,7 @@ const ArrowBack = () => {
     <ArrowLeft
       color="#03045E"
       onClick={router.back}
-      className="desktop:mt-28"
+      className="h-10 w-10 cursor-pointer desktop:mt-10"
     />
   );
 };
