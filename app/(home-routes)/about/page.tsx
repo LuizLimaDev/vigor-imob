@@ -5,52 +5,53 @@ import TestimonialCard from "./_components/TestimonialCard/TestimonialCard";
 export default function About() {
   return (
     <main className="flex w-screen flex-col items-center justify-center bg-VIligth-color px-4 pt-16 desktop:justify-center desktop:px-24">
-      <div className="flex flex-col items-center justify-center desktop:mt-16 desktop:flex-row-reverse desktop:gap-20 ">
+      <div className="flex flex-col items-center justify-center desktop:mt-16  desktop:flex-row-reverse">
         <Image
           src="/Pages/about/01.png"
           alt="Sobre imobiliária vigor"
           width={358}
           height={263}
         />
-        <div className="desktop:w-[38rem] desktop:items-start desktop:justify-start">
-          <h1 className="mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:h-[14.56rem] desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
-            A imobiliária mais conceituada da região
+        <div className="desktop:items-start desktop:justify-between">
+          <h1 className="mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
+            Mais que uma imobiliária, uma família para cuidar da sua
           </h1>
-          <p className="mb-6 mt-3 text-center font-poppins text-xs font-light desktop:mt-0 desktop:text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            distinctio. Labore excepturi perspiciatis nesciunt veniam rerum
-            magni incidunt molestias culpa nulla.
+          <p className="mb-6 mt-3 text-center font-poppins text-xs font-light desktop:mt-2 desktop:text-left">
+            A vigor imobiliária surgiu com o intuito de realizar um dos sonhos
+            mais importantes de qualquer ser humano: A casa própria. Mas como
+            todo bom ambiente de negócios muitas oportunidades de ganhar muito
+            dinheiro surgem aqui também, pode entrar a casa é sua.
           </p>
         </div>
       </div>
 
-      <div className="my-6 flex flex-col items-center justify-center gap-12 desktop:mt-28 desktop:flex-row">
+      <div className="my-6 flex flex-col items-center justify-center gap-12 desktop:mt-28 desktop:flex-row desktop:items-start">
         <QualitiesCard
           src="/Pages/about/clock.png"
           alt="Sobre imobiliária vigor"
           title="Agilidade"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              distinctio. Labore excepturi perspiciatis nesciunt veniam rerum magni
-              incidunt molestias culpa nulla.
-            "
+          text="Mesmo a despeito da grande demanda
+            Nossa equipe está preparada para te atender 
+            Da melhor forma e o mais rápido possível.
+          "
         />
         <QualitiesCard
           src="/Pages/about/shake-hands.png"
           alt="Sobre imobiliária vigor"
           title="Confiabilidade"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              distinctio. Labore excepturi perspiciatis nesciunt veniam rerum magni
-              incidunt molestias culpa nulla.
-            "
+          text="Há mais de doze anos no mercado imobiliário
+            Realizando sonhos e  ajudando famílias.
+          "
         />
         <QualitiesCard
           src="/Pages/about/price-up.png"
           alt="Sobre imobiliária vigor"
-          title="Valorização"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              distinctio. Labore excepturi perspiciatis nesciunt veniam rerum magni
-              incidunt molestias culpa nulla.
-            "
+          title="Investimento"
+          text="Realizar o sonho da casa própria é maravilhoso
+            Mas fazer isso colocando dinheiro no bolso
+            É melhor ainda. Muitos dos nossos imóveis são
+            Ótimas oportunidades de investimento.
+          "
         />
       </div>
 
@@ -78,29 +79,30 @@ export default function About() {
               </p>
             </div>
             <TestimonialCard
-              avatar="/Pages/about/avatar-01.png"
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus magna fringilla urna,
-            porttitor rhoncus dolor purus non enim praesent elem"
-              name="Floyd Miles"
-              venture="Residencial Verão"
+              avatar="/about/marcio-santos.jpg"
+              text="Um dos meus maiores sonhos era o de conseguir
+                A minha casa própria pelo programa Minha Casa Minha Vida
+                O que eu consegui graças a Vigor Imobiliária e equipe."
+              name="Marcio Santos"
               styles="desktop:max-w-[21.875rem] desktop:mt-[4rem]"
             />
           </div>
 
           <div className="flex flex-col items-center justify-center gap-10 desktop:items-start desktop:justify-start">
             <TestimonialCard
-              avatar="/Pages/about/avatar-02.png"
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
-              name="Kristin Watson"
-              venture="Residencial Outono"
+              avatar="/about/carla-melo.jpg"
+              text=" Sou muito Grata, a VIGOR IMOBILIÁRIA e toda a sua 
+                Equipe pelo apoio incondicional durante a compra do 
+                Meu AP, e do meu financiamento."
+              name="Carla Melo"
               styles="desktop:max-w-[27.812rem] desktop:h-[21,25rem]"
             />
             <TestimonialCard
-              avatar="/Pages/about/avatar-03.png"
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
-              name="Junne Taylor"
-              venture="Residencial Outono"
+              avatar="/about/renata-souza.jpg"
+              text="Com muito esforço conseguir juntar cada centavo
+                Necessário para comprar a minha casinha e isso agradeço
+                A Vigor imobiliária e equipe."
+              name="Renata Souza"
               styles="desktop:max-w-[21.875rem] desktop:h-[17.25rem]"
             />
           </div>
