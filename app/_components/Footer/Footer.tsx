@@ -21,7 +21,7 @@ const Footer = () => {
               className="mb-20 desktop:mb-4"
             />
             <p className="hidden text-center font-archivo text-[10px] font-light text-VIligth-color desktop:block">
-              CRECI - PJT: 271
+              CRECI - PJ: 271
             </p>
           </div>
 
