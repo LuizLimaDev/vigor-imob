@@ -14,11 +14,11 @@ import { filterProperties, filterPropertiesCity } from "@/app/actions/actions";
 import { useRouter } from "next/navigation";
 
 const MenuSliderProperties = ({ filterButtons, cities, searchParams }: any) => {
-  const filter = searchParams.split("=")[1];
+  const filter = searchParams;
   const router = useRouter();
 
   function handleClick(item: string) {
-    filterProperties([item]);
+    filterProperties(item);
   }
 
   return (

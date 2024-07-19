@@ -1,18 +1,21 @@
 "use client";
 
 import { filterProperties } from "@/app/actions/actions";
+import { useRouter } from "next/navigation";
 
 function scrollToTop() {
   window.scrollTo({ top: 400, behavior: "smooth" });
 }
 
 const PropertiesMenus = () => {
+  const router = useRouter();
+
   return (
     <ul className="flex flex-col items-center justify-center font-alegreya desktop:items-start">
       <li
         className="cursor-pointer"
         onClick={() => {
-          filterProperties([""]);
+          router.push("/properties");
           scrollToTop();
         }}
       >
@@ -21,7 +24,7 @@ const PropertiesMenus = () => {
       <li
         className="cursor-pointer"
         onClick={() => {
-          filterProperties(["novos"]);
+          filterProperties("novos");
           scrollToTop();
         }}
       >
@@ -30,7 +33,7 @@ const PropertiesMenus = () => {
       <li
         className="cursor-pointer"
         onClick={() => {
-          filterProperties(["usados"]);
+          filterProperties("usados");
           scrollToTop();
         }}
       >
@@ -39,7 +42,7 @@ const PropertiesMenus = () => {
       <li
         className="cursor-pointer"
         onClick={() => {
-          filterProperties([""]);
+          router.push("/properties");
           scrollToTop();
         }}
       >
@@ -48,7 +51,7 @@ const PropertiesMenus = () => {
       <li
         className="cursor-pointer"
         onClick={() => {
-          filterProperties(["comercial"]);
+          filterProperties("comercial");
           scrollToTop();
         }}
       >

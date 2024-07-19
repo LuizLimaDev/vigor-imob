@@ -20,7 +20,9 @@ const Properties = async ({
     let url = "https://king-prawn-app-vxkkv.ondigitalocean.app/api/property";
 
     if (Object.keys(searchParams).length > 0) {
-      url = url + `?${value}`;
+      const urlParams = new URLSearchParams(searchParams).toString();
+
+      url = url + `?${urlParams}`;
     }
 
     const res = await fetch(`${url}`, { cache: "no-store" });
