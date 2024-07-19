@@ -18,7 +18,7 @@ const AdminMenus = () => {
 
   return (
     <div
-      className={`${isAdmin === true ? "flex" : "hidden"} flex w-full justify-between`}
+      className={`${isAdmin === true ? "flex" : "hidden"} mt-2 flex w-full justify-between`}
     >
       <div className="flex w-[90%] items-center justify-between text-sm">
         <Link
