@@ -9,12 +9,12 @@ export default function About() {
         <Image
           src="/Pages/about/01.jpg"
           alt="Sobre imobiliária vigor"
-          width={358}
-          height={263}
+          width={600}
+          height={600}
           className="rounded-md"
         />
-        <div className="desktop:items-start desktop:justify-between">
-          <h1 className="mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
+        <div className="desktop:max-w-2xl desktop:items-start desktop:justify-between desktop:pr-10">
+          <h1 className=" mt-6 text-center font-archivo font-extrabold text-VIprimary-color desktop:text-left desktop:text-[4rem] desktop:leading-[4rem]">
             Mais que uma imobiliária, uma família para cuidar da sua
           </h1>
           <p className="mb-6 mt-3 text-center font-poppins text-xs font-light desktop:mt-2 desktop:text-left">
