@@ -111,7 +111,7 @@ const Footer = () => {
                     width={24}
                     height={24}
                   />
-                  CRECI - PTJ: 271
+                  CRECI - PJ: 271
                 </li>
               </ul>
             </div>

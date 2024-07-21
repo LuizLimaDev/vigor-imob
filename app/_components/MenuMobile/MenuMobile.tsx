@@ -94,7 +94,7 @@ const MenuMobile = () => {
               <FooterItem
                 src="/Icons/id.svg"
                 alt="creci"
-                text="CRECI - PTJ: 271"
+                text="CRECI - PJ: 271"
               />
             </div>
           </div>
