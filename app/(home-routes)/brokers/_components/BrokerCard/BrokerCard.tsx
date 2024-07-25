@@ -10,7 +10,7 @@ export type TProps = {
 
 const BrokerCard = ({ src, alt, name, description, creci }: TProps) => {
   return (
-    <div className="flex w-[15.625rem] flex-col items-center justify-center rounded-[.625rem]">
+    <div className="flex  w-[15.625rem] flex-col items-center justify-center rounded-[.625rem]">
       <Image
         src={src}
         alt={alt}
@@ -21,7 +21,7 @@ const BrokerCard = ({ src, alt, name, description, creci }: TProps) => {
       />
       <div className="flex min-h-[6rem] min-w-[15.625rem] flex-col items-center justify-center bg-VIprimary-color px-4 pt-3 text-justify text-VIligth-color">
         <h3 className="mb-2 self-start font-poppins text-lg">{name}</h3>
-        <p className="mb-2 self-start font-poppins text-sm font-light">
+        <p className="mb-2 min-h-[7rem] self-start font-poppins text-sm font-light">
           {description}
         </p>
       </div>
